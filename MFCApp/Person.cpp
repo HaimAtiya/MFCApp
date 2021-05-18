@@ -7,7 +7,7 @@ Person::Person(int id, CString fName, CString lName, Sex gender, int dayOfBirth,
 	this->id = id;
 	this->fName = fName;
 	this->lName = lName;
-	this->gender = gender;
+	//this->gender = gender;
 	this->dayOfBirth = dayOfBirth;
 	this->monthOfBirth = monthOfBirth;
 	this->yearOfBirth = yearOfBirth;
@@ -65,9 +65,9 @@ const CString Person::getFName() {
 const CString Person::getLName() {
 	return lName;
 }
-const Sex Person::getGender() {
-	return gender;
-}
+//const Sex Person::getGender() {
+	//return gender;
+//}
 const CString Person::getBirthDay() {
 	CString birthDay;
 	birthDay.Format(_T("%d/%d/%d"), dayOfBirth, monthOfBirth, yearOfBirth);

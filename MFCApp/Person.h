@@ -4,7 +4,7 @@ class Person
 {
 private:
 	int id;
-	Sex gender;
+	//Sex gender;
 	int dayOfBirth;
 	int monthOfBirth;
 	int yearOfBirth;

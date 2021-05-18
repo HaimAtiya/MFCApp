@@ -1,4 +1,5 @@
 #pragma once
+#include "Student.h"
 
 // StudentDlgClass dialog
 class StudentDlgClass : public CDialogEx
@@ -7,6 +8,7 @@ class StudentDlgClass : public CDialogEx
 
 public:
 	StudentDlgClass(CWnd* pParent = nullptr);   // standard constructor
+	CTypedPtrArray< CObArray, Student*> *students;
 	virtual ~StudentDlgClass();
 
 // Dialog Data
@@ -20,6 +22,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedButton2();
-//	afx_msg void OnBnClickedListBtn();
 	afx_msg void OnBnClickedListBtn();
+	afx_msg void OnBnClickedButton7();
+	afx_msg void OnBnClickedButton6();
 };
