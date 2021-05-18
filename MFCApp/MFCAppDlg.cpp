@@ -7,6 +7,7 @@
 #include "MFCApp.h"
 #include "MFCAppDlg.h"
 #include "afxdialogex.h"
+#include "StudentDlgClass.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -31,7 +32,9 @@ public:
 // Implementation
 protected:
 	DECLARE_MESSAGE_MAP()
+
 };
+
 
 CAboutDlg::CAboutDlg() : CDialogEx(IDD_ABOUTBOX)
 {
@@ -65,6 +68,7 @@ BEGIN_MESSAGE_MAP(CMFCAppDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_BUTTON2, &CMFCAppDlg::OnBnClickedButton2)
 END_MESSAGE_MAP()
 
 
@@ -153,3 +157,19 @@ HCURSOR CMFCAppDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
+void CMFCAppDlg::OnBnClickedButton2() {
+
+	StudentDlgClass dlg;
+	Person p(1, L"Haim", L"Atiya", Male, 31, 8, 1997, L"Tzliley Hanina", L"Tel Aviv", 6753080, 506383618);
+	Student s1(p, p, p);
+	students.Add(&s1);
+	dlg.students = &students;
+	dlg.DoModal();
+	Student* thePerson;
+	for (int i = 0; i < students.GetSize(); i++)
+	{
+		thePerson = students.GetAt(i);
+	}
+}

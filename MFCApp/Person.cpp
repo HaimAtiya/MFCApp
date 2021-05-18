@@ -1,11 +1,13 @@
 #include "pch.h"
 #include "Person.h"
 
+
+
 Person::Person(int id, CString fName, CString lName, Sex gender, int dayOfBirth, int monthOfBirth, int yearOfBirth, CString street, CString city, int zipCode, int phoneNumber) {
 	this->id = id;
 	this->fName = fName;
 	this->lName = lName;
-	this->gender = gender;
+	//this->gender = gender;
 	this->dayOfBirth = dayOfBirth;
 	this->monthOfBirth = monthOfBirth;
 	this->yearOfBirth = yearOfBirth;
@@ -13,6 +15,14 @@ Person::Person(int id, CString fName, CString lName, Sex gender, int dayOfBirth,
 	this->city = city;
 	this->zipCode = zipCode;
 	this->phoneNumber = phoneNumber;
+}
+CArchive& operator<<(CArchive& ar, Person p) {
+	ar << p.id << p.fName << p.lName << /*p.gender <<*/ p.dayOfBirth << p.monthOfBirth << p.yearOfBirth << p.street << p.city << p.zipCode << p.phoneNumber;
+	return ar;
+}
+CArchive& operator>>(CArchive& ar, Person &p) {
+	ar >> p.id >> p.fName >> p.lName >> /*p.gender >>*/ p.dayOfBirth >> p.monthOfBirth >> p.yearOfBirth >> p.street >> p.city >> p.zipCode >> p.phoneNumber;
+	return ar;
 }
 void Person::setName(CString fName, CString lName){
 	this->fName = fName;
@@ -55,9 +65,9 @@ const CString Person::getFName() {
 const CString Person::getLName() {
 	return lName;
 }
-const Sex Person::getGender() {
-	return gender;
-}
+//const Sex Person::getGender() {
+	//return gender;
+//}
 const CString Person::getBirthDay() {
 	CString birthDay;
 	birthDay.Format(_T("%d/%d/%d"), dayOfBirth, monthOfBirth, yearOfBirth);
