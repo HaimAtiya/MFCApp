@@ -16,7 +16,10 @@ protected:
 	int zipCode;
 	int phoneNumber;
 public:
+	Person() {};
 	Person(int id, CString fName, CString lName, Sex gender, int dayOfBirth, int monthOfBirth, int yearOfBirth, CString street, CString city, int zipCode, int phoneNumber);
+	friend CArchive& operator<<(CArchive& ar, Person p);
+	friend CArchive& operator>>(CArchive& ar, Person &p);
 	void setName(CString fName, CString lName);
 	void setFirstName(CString fName);
 	void setLastName(CString lName);

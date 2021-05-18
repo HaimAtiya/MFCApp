@@ -3,7 +3,7 @@
 //
 
 #pragma once
-
+#include "Student.h"
 
 // CMFCAppDlg dialog
 class CMFCAppDlg : public CDialogEx
@@ -11,7 +11,7 @@ class CMFCAppDlg : public CDialogEx
 // Construction
 public:
 	CMFCAppDlg(CWnd* pParent = nullptr);	// standard constructor
-
+	CTypedPtrArray< CObArray, Student*> students;
 // Dialog Data
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_MFCAPP_DIALOG };
@@ -33,4 +33,5 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedButton1();
+	afx_msg void OnBnClickedButton2();
 };

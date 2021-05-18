@@ -31,6 +31,7 @@ public:
 // Implementation
 protected:
 	DECLARE_MESSAGE_MAP()
+
 };
 
 CAboutDlg::CAboutDlg() : CDialogEx(IDD_ABOUTBOX)
@@ -65,6 +66,7 @@ BEGIN_MESSAGE_MAP(CMFCAppDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_BUTTON2, &CMFCAppDlg::OnBnClickedButton2)
 END_MESSAGE_MAP()
 
 
@@ -152,4 +154,14 @@ HCURSOR CMFCAppDlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
 }
+
+
+
+void CMFCAppDlg::OnBnClickedButton2() {
+
+	CDialog studentsDLG(Students_Dlg);
+	studentsDLG.DoModal();
+
+}
+
 

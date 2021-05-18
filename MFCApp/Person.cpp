@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "Person.h"
 
+
+
 Person::Person(int id, CString fName, CString lName, Sex gender, int dayOfBirth, int monthOfBirth, int yearOfBirth, CString street, CString city, int zipCode, int phoneNumber) {
 	this->id = id;
 	this->fName = fName;
@@ -13,6 +15,14 @@ Person::Person(int id, CString fName, CString lName, Sex gender, int dayOfBirth,
 	this->city = city;
 	this->zipCode = zipCode;
 	this->phoneNumber = phoneNumber;
+}
+CArchive& operator<<(CArchive& ar, Person p) {
+	ar << p.id << p.fName << p.lName << /*p.gender <<*/ p.dayOfBirth << p.monthOfBirth << p.yearOfBirth << p.street << p.city << p.zipCode << p.phoneNumber;
+	return ar;
+}
+CArchive& operator>>(CArchive& ar, Person &p) {
+	ar >> p.id >> p.fName >> p.lName >> /*p.gender >>*/ p.dayOfBirth >> p.monthOfBirth >> p.yearOfBirth >> p.street >> p.city >> p.zipCode >> p.phoneNumber;
+	return ar;
 }
 void Person::setName(CString fName, CString lName){
 	this->fName = fName;
