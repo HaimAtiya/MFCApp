@@ -2,12 +2,14 @@
 // Microsoft Visual C++ generated include file.
 // Used by MFCApp.rc
 //
+#define Students_Dlg                    9
 #define IDM_ABOUTBOX                    0x0010
 #define IDD_ABOUTBOX                    100
 #define IDS_ABOUTBOX                    101
 #define IDD_MFCAPP_DIALOG               102
 #define IDR_MAINFRAME                   128
 #define IDB_BITMAP1                     130
+#define IDD_DIALOG1                     132
 #define IDC_                            1001
 #define IDC_STATIC1                     1001
 #define IDC_BUTTON1                     1003
@@ -19,7 +21,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        132
+#define _APS_NEXT_RESOURCE_VALUE        134
 #define _APS_NEXT_COMMAND_VALUE         32771
 #define _APS_NEXT_CONTROL_VALUE         1004
 #define _APS_NEXT_SYMED_VALUE           101
