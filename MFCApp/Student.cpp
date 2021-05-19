@@ -31,18 +31,30 @@ void Student::setStudentDetails(Person student) {
 	street = student.getStreet();
 	city = student.getCity();
 	zipCode = student.getZipCode();
-	int phoneNumber = student.getPhoneNumber();
+	phoneNumber = student.getPhoneNumber();
 
 }
-Person Student::getMother() {
+Person& Student::getMother() {
 	return motherDetails;
 }
-Person Student::getFather() {
+Person& Student::getFather() {
 	return fatherDetails;
 }
-void setParentDetails(enum Parent, Person details);
-int addNewGrade(int grade);
-int addMissingDay();
-int setMissingDays(int days);
-int addLate();
-int setLates;
+int Student::getLate() {
+	return lates;
+}
+int Student::getMissing() {
+	return missingDays;
+}
+int Student::addMissingDay() {
+	return ++missingDays;
+}
+int Student::addLate() {
+	return ++lates;
+}
+int Student::removeMissingDay() {
+	return --missingDays;
+}
+int Student::removeLate() {
+	return --lates;
+}

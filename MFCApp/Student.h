@@ -16,11 +16,13 @@ public:
 	void setParentDetails(enum Parent, Person details);
 	int addNewGrade(int grade);
 	int addMissingDay();
-	int setMissingDays(int days);
 	int addLate();
-	int setLates;
+	int removeMissingDay();
+	int removeLate();
 	void setStudentDetails(Person student);
-	Person getMother();
-	Person getFather();
+	Person& getMother();
+	Person& getFather();
+	int getLate();
+	int getMissing();
 };
 

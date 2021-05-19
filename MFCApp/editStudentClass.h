@@ -1,6 +1,5 @@
 #pragma once
 #include "Student.h"
-
 // editStudentClass dialog
 
 class editStudentClass : public CDialogEx
@@ -13,7 +12,10 @@ public:
 	int id;
 	CTypedPtrArray< CObArray, Student*>* students;
 	Student *student;
-
+	CWnd* label;
+	CString tmp;
+	CListCtrl *sList;
+	void updateList();
 // Dialog Data
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = EDIT_STUDENT };
@@ -59,4 +61,10 @@ public:
 	CEdit F_STREET;
 	CEdit F_CITY;
 	CEdit F_ZIPCODE;
+	afx_msg void OnBnClickedButton3();
+	afx_msg void OnBnClickedButton4();
+	afx_msg void OnBnClickedButton8();
+	afx_msg void OnBnClickedButton9();
+	afx_msg void OnBnClickedButton1();
 };
+

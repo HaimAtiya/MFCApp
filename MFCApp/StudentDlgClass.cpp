@@ -24,11 +24,6 @@ BOOL StudentDlgClass::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 	StudentDlgClass::current_id = NULL;
-	//Person p1(1, L"Moshe", L"Moshe", Male, 11, 8, 1997, L"Tzliley Hanina", L"Tel Aviv", 6753080, 506383618);
-	//Student* s2 = new Student(p1, p1, p1);
-	//this->students->Add(s2);
-	//this->students->Add(s2);
-	//this->students->Add(s2);
 	allStudentDlg.students = students;
 	allStudentDlg.curr_id = &current_id;
 	allStudentDlg.DELETE_BTN = &DELETE_BTN;
@@ -47,7 +42,6 @@ void StudentDlgClass::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(StudentDlgClass, CDialogEx)
-	//	ON_BN_CLICKED(STUDENTS_LIST_BTN, &StudentDlgClass::OnBnClickedListBtn)
 	ON_BN_CLICKED(IDC_BUTTON2, &StudentDlgClass::OnBnClickedButton2)
 	ON_BN_CLICKED(STUDENTS_LIST_BTN, &StudentDlgClass::OnBnClickedListBtn)
 	ON_BN_CLICKED(IDC_BUTTON7, &StudentDlgClass::OnBnClickedButton7)

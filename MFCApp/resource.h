@@ -15,6 +15,7 @@
 #define IDB_BITMAP3                     142
 #define IDC_                            1001
 #define IDC_STATIC1                     1001
+#define MISSING_COUNT                   1001
 #define IDC_BUTTON1                     1003
 #define IDC_BUTTON2                     1004
 #define IDC_BUTTON5                     1007
@@ -61,6 +62,7 @@
 #define FIRST_NAME19                    1058
 #define FIRST_NAME20                    1059
 #define FIRST_NAME21                    1060
+#define LATES_COUNT                     1061
 #define ADD_STUDENT                     57665
 
 // Next default values for new objects
@@ -69,7 +71,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        143
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1041
+#define _APS_NEXT_CONTROL_VALUE         1062
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

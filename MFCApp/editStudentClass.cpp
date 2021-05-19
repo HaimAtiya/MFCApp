@@ -34,7 +34,6 @@ BOOL editStudentClass::OnInitDialog()
 	}
 	
 	//inset values into controls:
-	CString tmp;
 
 	/* STUDENT VALUES*/
 	S_FNAME.SetWindowText(student->getFName());
@@ -58,6 +57,13 @@ BOOL editStudentClass::OnInitDialog()
 	tmp.Format(L"%d", student->getYearOfBirth());
 	S_YEAR.AddString(tmp);
 	S_YEAR.SetCurSel(0);
+	label = GetDlgItem(LATES_COUNT);
+	tmp.Format(L"%d", student->getLate());
+	label->SetWindowText(tmp);
+	label = GetDlgItem(MISSING_COUNT);
+	tmp.Format(L"%d", student->getMissing());
+	label->SetWindowText(tmp);
+	
 
 	/* MOTHER VALUES*/
 	M_FNAME.SetWindowText(student->getMother().getFName());
@@ -148,7 +154,113 @@ void editStudentClass::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(editStudentClass, CDialogEx)
+	ON_BN_CLICKED(IDC_BUTTON3, &editStudentClass::OnBnClickedButton3)
+	ON_BN_CLICKED(IDC_BUTTON4, &editStudentClass::OnBnClickedButton4)
+	ON_BN_CLICKED(IDC_BUTTON8, &editStudentClass::OnBnClickedButton8)
+	ON_BN_CLICKED(IDC_BUTTON9, &editStudentClass::OnBnClickedButton9)
+	ON_BN_CLICKED(IDC_BUTTON1, &editStudentClass::OnBnClickedButton1)
 END_MESSAGE_MAP()
 
 
 // editStudentClass message handlers
+
+//ADD ONE LATE
+void editStudentClass::OnBnClickedButton3()
+{
+	label = GetDlgItem(LATES_COUNT);
+	tmp.Format(L"%d", student->addLate());
+	label->SetWindowText(tmp);
+}
+
+
+//REMOVE ONE LATE
+void editStudentClass::OnBnClickedButton4()
+{
+	label = GetDlgItem(LATES_COUNT);
+	tmp.Format(L"%d", student->removeLate());
+	label->SetWindowText(tmp);
+}
+
+//ADD ONE MISS
+void editStudentClass::OnBnClickedButton8()
+{
+	label = GetDlgItem(MISSING_COUNT);
+	tmp.Format(L"%d", student->addMissingDay());
+	label->SetWindowText(tmp);
+}
+
+//REMOVE ONE MISS
+void editStudentClass::OnBnClickedButton9()
+{
+	label = GetDlgItem(MISSING_COUNT);
+	tmp.Format(L"%d", student->removeMissingDay());
+	label->SetWindowText(tmp);
+}
+
+//SAVE BUTTON
+void editStudentClass::OnBnClickedButton1()
+{
+	/* STUDENT VALUES */
+	S_FNAME.GetWindowText(tmp);
+	student->setFirstName(tmp);
+	S_LNAME.GetWindowText(tmp);
+	student->setLastName(tmp);
+	S_STREET.GetWindowText(tmp);
+	student->setStreet(tmp);
+	S_CITY.GetWindowText(tmp);
+	student->setCity(tmp);
+	S_PHONE.GetWindowText(tmp);
+	student->setPhoneNumber(_ttoi(tmp));
+	S_ZIPCODE.GetWindowText(tmp);
+	student->setZipCode(_ttoi(tmp));
+
+	/* MOTHER VALUES */
+	M_FNAME.GetWindowText(tmp);
+	student->getMother().setFirstName(tmp);
+	M_LNAME.GetWindowText(tmp);
+	student->getMother().setLastName(tmp);
+	M_STREET.GetWindowText(tmp);
+	student->getMother().setStreet(tmp);
+	M_CITY.GetWindowText(tmp);
+	student->getMother().setCity(tmp);
+	M_PHONE.GetWindowText(tmp);
+	student->getMother().setPhoneNumber(_ttoi(tmp));
+	M_ZIPCODE.GetWindowText(tmp);
+	student->getMother().setZipCode(_ttoi(tmp));
+
+	/* FATHER VALUES */
+	F_FNAME.GetWindowText(tmp);
+	student->getFather().setFirstName(tmp);
+	F_LNAME.GetWindowText(tmp);
+	student->getFather().setLastName(tmp);
+	F_STREET.GetWindowText(tmp);
+	student->getFather().setStreet(tmp);
+	F_CITY.GetWindowText(tmp);
+	student->getFather().setCity(tmp);
+	F_PHONE.GetWindowText(tmp);
+	student->getFather().setPhoneNumber(_ttoi(tmp));
+	F_ZIPCODE.GetWindowText(tmp);
+	student->getFather().setZipCode(_ttoi(tmp));
+
+	MessageBox(L"התלמיד עודכן בהצלחה!");
+	updateList();
+	EndDialog(0);
+
+}
+
+void editStudentClass::updateList() {
+	sList->DeleteAllItems();
+	int nItem;
+
+	for (int i = 0; i < students->GetSize(); i++) {
+		Student* stdnt = students->GetAt(i);
+		CString tmp;
+		tmp.Format(_T("%d"), stdnt->getID());
+		nItem = sList->InsertItem(0, tmp);
+		sList->SetItemText(nItem, 1, stdnt->getFName());
+		sList->SetItemText(nItem, 2, stdnt->getLName());
+		sList->SetItemText(nItem, 3, stdnt->getBirthDay());
+		sList->SetItemText(nItem, 4, stdnt->getAddress());
+
+	}
+}

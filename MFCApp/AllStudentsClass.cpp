@@ -115,6 +115,7 @@ void AllStudentsClass::OnClickListCtrl(NMHDR* pNMHDR, LRESULT* pResult)
 		editStudentClass dlg;
 		dlg.id = _ttoi(sList.GetItemText(hItem, 0));
 		dlg.students = students;
+		dlg.sList = &sList;
 		dlg.DoModal();
 	}
 	*pResult = 0;
