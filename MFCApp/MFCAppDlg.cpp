@@ -162,9 +162,9 @@ HCURSOR CMFCAppDlg::OnQueryDragIcon()
 void CMFCAppDlg::OnBnClickedButton2() {
 
 	StudentDlgClass dlg;
-	Person p(1, L"Haim", L"Atiya", Male, 31, 8, 1997, L"Tzliley Hanina", L"Tel Aviv", 6753080, 506383618);
-	Student s1(p, p, p);
-	students.Add(&s1);
+	//Person p(1, L"Haim", L"Atiya", Male, 31, 8, 1997, L"Tzliley Hanina", L"Tel Aviv", 6753080, 506383618);
+	//Student s1(p, p, p);
+	//students.Add(&s1);
 	dlg.students = &students;
 	dlg.DoModal();
 }

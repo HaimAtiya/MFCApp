@@ -11,6 +11,7 @@ public:
 	AllStudentsClass(CWnd* pParent = nullptr);   // standard constructor
 	CTypedPtrArray< CObArray, Student*>* students;
 	virtual ~AllStudentsClass();
+	void updateList();
 
 // Dialog Data
 #ifdef AFX_DESIGN_TIME
@@ -24,4 +25,5 @@ protected:
 public:
 	DECLARE_EVENTSINK_MAP()
 	CListCtrl sList;
+
 };
