@@ -22,10 +22,10 @@ public:
 #endif
 
 protected:
+	int current_id;
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 	virtual BOOL OnInitDialog();
 	char cur_tab = 3; // '0' - ALL STUDENTS, '1' - ADD NEW STUDENT, '2' - DELETE STUDENT
-
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedButton2();
@@ -34,4 +34,5 @@ public:
 	afx_msg void OnBnClickedButton6();
 	afx_msg void OnBnClickedButton5();
 
+	CButton DELETE_BTN;
 };

@@ -10,7 +10,6 @@
 // StudentDlgClass dialog
 
 IMPLEMENT_DYNAMIC(StudentDlgClass, CDialogEx)
-
 StudentDlgClass::StudentDlgClass(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(Students_Dlg, pParent)
 {
@@ -24,12 +23,15 @@ StudentDlgClass::~StudentDlgClass()
 BOOL StudentDlgClass::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
+	StudentDlgClass::current_id = NULL;
 	//Person p1(1, L"Moshe", L"Moshe", Male, 11, 8, 1997, L"Tzliley Hanina", L"Tel Aviv", 6753080, 506383618);
 	//Student* s2 = new Student(p1, p1, p1);
 	//this->students->Add(s2);
 	//this->students->Add(s2);
 	//this->students->Add(s2);
 	allStudentDlg.students = students;
+	allStudentDlg.curr_id = &current_id;
+	allStudentDlg.DELETE_BTN = &DELETE_BTN;
 	allStudentDlg.Create(ALL_STUDENTS, this);
 	addStudentDlg.Create(ADD_STUDENT, this);
 	deleteStudentDlg.Create(DELETE_STUDENT, this);
@@ -41,6 +43,7 @@ BOOL StudentDlgClass::OnInitDialog()
 void StudentDlgClass::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_BUTTON5, DELETE_BTN);
 }
 
 
@@ -124,4 +127,3 @@ void StudentDlgClass::OnBnClickedButton6()
 		allStudentDlg.updateList();
 	}
 }
-
