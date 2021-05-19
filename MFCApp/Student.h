@@ -14,6 +14,7 @@ public:
 	Student() {};
 	Student(Person student, Person motherDetails, Person fatherDetails);
 	void Serialize(CArchive& archive);
+	Person getStudentPersonDetails();
 	void setParentDetails(enum Parent, Person details);
 	int addNewGrade(int grade);
 	int addMissingDay();
