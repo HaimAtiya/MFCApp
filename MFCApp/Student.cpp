@@ -34,6 +34,12 @@ void Student::setStudentDetails(Person student) {
 	int phoneNumber = student.getPhoneNumber();
 
 }
+Person Student::getMother() {
+	return motherDetails;
+}
+Person Student::getFather() {
+	return fatherDetails;
+}
 void setParentDetails(enum Parent, Person details);
 int addNewGrade(int grade);
 int addMissingDay();

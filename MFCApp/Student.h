@@ -20,5 +20,7 @@ public:
 	int addLate();
 	int setLates;
 	void setStudentDetails(Person student);
+	Person getMother();
+	Person getFather();
 };
 

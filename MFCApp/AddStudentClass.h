@@ -1,6 +1,5 @@
 #pragma once
 #include "Person.h"
-
 // AddStudentClass dialog
 
 class AddStudentClass : public CDialogEx

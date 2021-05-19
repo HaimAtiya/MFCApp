@@ -2,7 +2,6 @@
 #include "Student.h"
 #include "AllStudentsClass.h"
 #include "AddStudentClass.h"
-#include "DeleteStudentClass.h"
 
 // StudentDlgClass dialog
 class StudentDlgClass : public CDialogEx
@@ -15,7 +14,6 @@ public:
 	virtual ~StudentDlgClass();
 	AllStudentsClass allStudentDlg;
 	AddStudentClass addStudentDlg;
-	DeleteStudentClass deleteStudentDlg;
 // Dialog Data
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = Students_Dlg };

@@ -110,10 +110,12 @@ void AllStudentsClass::OnClickListCtrl(NMHDR* pNMHDR, LRESULT* pResult)
 	sList.ScreenToClient(&pt);
 	UINT Flags;
 	int hItem = sList.HitTest(pt, &Flags);
-	
 	if (Flags & LVHT_ONITEMLABEL)
 	{
-		MessageBox(sList.GetItemText(hItem, 1));
+		editStudentClass dlg;
+		dlg.id = _ttoi(sList.GetItemText(hItem, 0));
+		dlg.students = students;
+		dlg.DoModal();
 	}
 	*pResult = 0;
 }
