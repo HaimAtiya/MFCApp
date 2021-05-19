@@ -1,6 +1,5 @@
 #pragma once
 #include "Student.h"
-
 // AllStudentsClass dialog
 
 class AllStudentsClass : public CDialogEx
@@ -11,6 +10,9 @@ public:
 	AllStudentsClass(CWnd* pParent = nullptr);   // standard constructor
 	CTypedPtrArray< CObArray, Student*>* students;
 	virtual ~AllStudentsClass();
+	void updateList();
+	int* curr_id;
+	CButton *DELETE_BTN;
 
 // Dialog Data
 #ifdef AFX_DESIGN_TIME
@@ -24,4 +26,7 @@ protected:
 public:
 	DECLARE_EVENTSINK_MAP()
 	CListCtrl sList;
+	afx_msg void OnLvnItemchangedList2(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnClickListCtrl(NMHDR* pNMHDR, LRESULT* pResult);
+
 };

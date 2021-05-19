@@ -21,7 +21,6 @@
 #define IDC_BUTTON4                     1009
 #define IDC_BUTTON7                     1010
 #define STUDENTS_LIST_BTN               1014
-#define STUDENTS_LIST_CTRL              1024
 #define IDC_LIST2                       1025
 #define ADD_STUDENT                     57665
 

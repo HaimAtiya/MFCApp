@@ -10,7 +10,6 @@
 // StudentDlgClass dialog
 
 IMPLEMENT_DYNAMIC(StudentDlgClass, CDialogEx)
-
 StudentDlgClass::StudentDlgClass(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(Students_Dlg, pParent)
 {
@@ -24,12 +23,15 @@ StudentDlgClass::~StudentDlgClass()
 BOOL StudentDlgClass::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
-	Person p1(1, L"Moshe", L"Moshe", Male, 11, 8, 1997, L"Tzliley Hanina", L"Tel Aviv", 6753080, 506383618);
-	Student* s2 = new Student(p1, p1, p1);
-	this->students->Add(s2);
-	this->students->Add(s2);
-	this->students->Add(s2);
+	StudentDlgClass::current_id = NULL;
+	//Person p1(1, L"Moshe", L"Moshe", Male, 11, 8, 1997, L"Tzliley Hanina", L"Tel Aviv", 6753080, 506383618);
+	//Student* s2 = new Student(p1, p1, p1);
+	//this->students->Add(s2);
+	//this->students->Add(s2);
+	//this->students->Add(s2);
 	allStudentDlg.students = students;
+	allStudentDlg.curr_id = &current_id;
+	allStudentDlg.DELETE_BTN = &DELETE_BTN;
 	allStudentDlg.Create(ALL_STUDENTS, this);
 	addStudentDlg.Create(ADD_STUDENT, this);
 	deleteStudentDlg.Create(DELETE_STUDENT, this);
@@ -41,6 +43,7 @@ BOOL StudentDlgClass::OnInitDialog()
 void StudentDlgClass::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_BUTTON5, DELETE_BTN);
 }
 
 
@@ -78,9 +81,16 @@ void StudentDlgClass::OnBnClickedButton2()
 //DELTE STUDENT
 void StudentDlgClass::OnBnClickedButton5()
 {
-	addStudentDlg.ShowWindow(SW_HIDE);
-	allStudentDlg.ShowWindow(SW_HIDE);
-	deleteStudentDlg.ShowWindow(SW_SHOW);
+	Student* stdnt = students->GetAt(current_id);
+	CString confirm_txt;
+	confirm_txt.Format(L"האם אתה בטוח שברצונך למחוק את התלמיד %s?", stdnt->getStudentPersonDetails().getFullName());
+	const int result = MessageBox(confirm_txt, L"מחיקת תלמיד", MB_YESNO);
+	if (result == IDYES) {
+		MessageBox(L"התלמיד נמחק בהצלחה!");
+		students->RemoveAt(current_id);
+		//Update list
+		allStudentDlg.updateList();
+	}
 }
 
 
@@ -119,6 +129,8 @@ void StudentDlgClass::OnBnClickedButton6()
 		ar.Close();
 		file.Close();
 		MessageBox(L"רשימת התלמידים נטענה בהצלחה!");
+
+		//Update list
+		allStudentDlg.updateList();
 	}
 }
-
