@@ -167,9 +167,4 @@ void CMFCAppDlg::OnBnClickedButton2() {
 	students.Add(&s1);
 	dlg.students = &students;
 	dlg.DoModal();
-	Student* thePerson;
-	for (int i = 0; i < students.GetSize(); i++)
-	{
-		thePerson = students.GetAt(i);
-	}
 }
