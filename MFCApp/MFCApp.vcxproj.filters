@@ -51,7 +51,7 @@
     <ClInclude Include="AddStudentClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DeleteStudentClass.h">
+    <ClInclude Include="editStudentClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -80,7 +80,7 @@
     <ClCompile Include="AddStudentClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DeleteStudentClass.cpp">
+    <ClCompile Include="editStudentClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -99,6 +99,12 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\header_txt.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\lates.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\missing.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

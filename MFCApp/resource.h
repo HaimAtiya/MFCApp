@@ -11,8 +11,11 @@
 #define IDB_BITMAP1                     130
 #define ALL_STUDENTS                    135
 #define DELETE_STUDENT                  136
+#define IDB_BITMAP2                     141
+#define IDB_BITMAP3                     142
 #define IDC_                            1001
 #define IDC_STATIC1                     1001
+#define MISSING_COUNT                   1001
 #define IDC_BUTTON1                     1003
 #define IDC_BUTTON2                     1004
 #define IDC_BUTTON5                     1007
@@ -21,9 +24,12 @@
 #define IDC_BUTTON4                     1009
 #define IDC_BUTTON7                     1010
 #define STUDENTS_LIST_BTN               1014
+#define IDC_BUTTON8                     1014
+#define IDC_BUTTON9                     1015
 #define IDC_LIST2                       1025
 #define FIRST_NAME                      1028
 #define FIRST_NAME2                     1029
+#define EDIT_STUDENT                    1029
 #define FIRST_NAME3                     1030
 #define FIRST_NAME4                     1031
 #define IDC_COMBO1                      1032
@@ -34,16 +40,38 @@
 #define IDC_COMBO4                      1037
 #define FIRST_NAME7                     1038
 #define ADD_STDNT_HEADER                1039
-#define IDC_SCROLLBAR1                  1040
+#define FIRST_NAME8                     1039
+#define FIRST_NAME9                     1040
+#define IDC_COMBO5                      1041
+#define IDC_COMBO6                      1042
+#define IDC_COMBO7                      1043
+#define IDC_COMBO8                      1044
+#define FIRST_NAME10                    1045
+#define FIRST_NAME11                    1046
+#define FIRST_NAME12                    1047
+#define FIRST_NAME13                    1048
+#define FIRST_NAME14                    1049
+#define FIRST_NAME15                    1050
+#define FIRST_NAME16                    1051
+#define IDC_COMBO9                      1052
+#define IDC_COMBO10                     1053
+#define IDC_COMBO11                     1054
+#define IDC_COMBO12                     1055
+#define FIRST_NAME17                    1056
+#define FIRST_NAME18                    1057
+#define FIRST_NAME19                    1058
+#define FIRST_NAME20                    1059
+#define FIRST_NAME21                    1060
+#define LATES_COUNT                     1061
 #define ADD_STUDENT                     57665
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        141
+#define _APS_NEXT_RESOURCE_VALUE        143
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1041
+#define _APS_NEXT_CONTROL_VALUE         1062
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

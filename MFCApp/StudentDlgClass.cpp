@@ -24,17 +24,11 @@ BOOL StudentDlgClass::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 	StudentDlgClass::current_id = NULL;
-	//Person p1(1, L"Moshe", L"Moshe", Male, 11, 8, 1997, L"Tzliley Hanina", L"Tel Aviv", 6753080, 506383618);
-	//Student* s2 = new Student(p1, p1, p1);
-	//this->students->Add(s2);
-	//this->students->Add(s2);
-	//this->students->Add(s2);
 	allStudentDlg.students = students;
 	allStudentDlg.curr_id = &current_id;
 	allStudentDlg.DELETE_BTN = &DELETE_BTN;
 	allStudentDlg.Create(ALL_STUDENTS, this);
 	addStudentDlg.Create(ADD_STUDENT, this);
-	deleteStudentDlg.Create(DELETE_STUDENT, this);
 	allStudentDlg.ShowWindow(SW_SHOW);
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
@@ -48,7 +42,6 @@ void StudentDlgClass::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(StudentDlgClass, CDialogEx)
-	//	ON_BN_CLICKED(STUDENTS_LIST_BTN, &StudentDlgClass::OnBnClickedListBtn)
 	ON_BN_CLICKED(IDC_BUTTON2, &StudentDlgClass::OnBnClickedButton2)
 	ON_BN_CLICKED(STUDENTS_LIST_BTN, &StudentDlgClass::OnBnClickedListBtn)
 	ON_BN_CLICKED(IDC_BUTTON7, &StudentDlgClass::OnBnClickedButton7)
@@ -64,7 +57,6 @@ void StudentDlgClass::OnBnClickedListBtn()
 {
 
 
-	deleteStudentDlg.ShowWindow(SW_HIDE);
 	addStudentDlg.ShowWindow(SW_HIDE);
 	allStudentDlg.ShowWindow(SW_SHOW);
 
@@ -75,7 +67,6 @@ void StudentDlgClass::OnBnClickedButton2()
 	Person student, mother, father;
 	HANDLE t1;
 	DWORD t1ID;
-	deleteStudentDlg.ShowWindow(SW_HIDE);
 	allStudentDlg.ShowWindow(SW_HIDE);
 	addStudentDlg.setFormTitle(L"פרטי התלמיד");
 	addStudentDlg.pers = &student;
@@ -86,7 +77,8 @@ void StudentDlgClass::OnBnClickedButton2()
 	addStudentDlg.setFormTitle(L"פרטי האבא");
 	addStudentDlg.pers = &father;
 	addStudentDlg.RunModalLoop(SW_SHOW);
-	Student* s = new Student(student, mother, father);
+	Student* s = new Student(mother, father);
+	s->setStudentDetails(student);
 	students->Add(s);
 	MessageBox(L"התלמיד נוסף בהצלחה!");
 	allStudentDlg.updateList();
@@ -99,11 +91,11 @@ void StudentDlgClass::OnBnClickedButton5()
 	Student* stdnt;
 	//fint student index in array
 	for (int i = 0; i < students->GetSize(); i++) {
-		if (students->GetAt(i)->getStudentPersonDetails().getID() == current_id)
+		if (students->GetAt(i)->getID() == current_id)
 		{
 			stdnt = students->GetAt(i);
 			CString confirm_txt;
-			confirm_txt.Format(L"האם אתה בטוח שברצונך למחוק את התלמיד %s?", stdnt->getStudentPersonDetails().getFullName());
+			confirm_txt.Format(L"האם אתה בטוח שברצונך למחוק את התלמיד %s?", stdnt->getFullName());
 			const int result = MessageBox(confirm_txt, L"מחיקת תלמיד", MB_YESNO);
 			if (result == IDYES) {
 				MessageBox(L"התלמיד נמחק בהצלחה!");

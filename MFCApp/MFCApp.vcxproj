@@ -185,7 +185,7 @@
   <ItemGroup>
     <ClInclude Include="AddStudentClass.h" />
     <ClInclude Include="AllStudentsClass.h" />
-    <ClInclude Include="DeleteStudentClass.h" />
+    <ClInclude Include="editStudentClass.h" />
     <ClInclude Include="enums.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MFCApp.h" />
@@ -200,7 +200,7 @@
   <ItemGroup>
     <ClCompile Include="AddStudentClass.cpp" />
     <ClCompile Include="AllStudentsClass.cpp" />
-    <ClCompile Include="DeleteStudentClass.cpp" />
+    <ClCompile Include="editStudentClass.cpp" />
     <ClCompile Include="MFCApp.cpp" />
     <ClCompile Include="MFCAppDlg.cpp" />
     <ClCompile Include="pch.cpp">
@@ -221,7 +221,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\header_txt.bmp" />
+    <Image Include="res\lates.bmp" />
     <Image Include="res\MFCApp.ico" />
+    <Image Include="res\missing.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

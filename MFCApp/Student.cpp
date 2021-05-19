@@ -3,8 +3,8 @@
 
 IMPLEMENT_SERIAL(Student, CObject, 1);
 
-Student::Student(Person student, Person motherDetails, Person fatherDetails) {
-	this->student = student;
+Student::Student(Person motherDetails, Person fatherDetails) :
+	Person() {
 	this->motherDetails = motherDetails;
 	this->fatherDetails = fatherDetails;
 	this->avarage = 0;
@@ -15,16 +15,46 @@ void Student::Serialize(CArchive& archive) {
 	CObject::Serialize(archive);
 
 	if (archive.IsStoring())
-		archive << student << motherDetails << fatherDetails << avarage << missingDays << lates;
+		archive << id << fName << lName << /*p.gender <<*/ dayOfBirth << monthOfBirth << yearOfBirth << street << city << zipCode << phoneNumber << motherDetails << fatherDetails << avarage << missingDays << lates;
 	else
-		archive >> student >> motherDetails >> fatherDetails >> avarage >> missingDays >> lates;
+		archive >> id >> fName >> lName >> /*p.gender >>*/ dayOfBirth >> monthOfBirth >> yearOfBirth >> street >> city >> zipCode >> phoneNumber >> motherDetails >> fatherDetails >> avarage >> missingDays >> lates;
 }
-Person Student::getStudentPersonDetails() {
-	return student;
+
+void Student::setStudentDetails(Person student) {
+	id = student.getID();
+	//Sex gender;
+	dayOfBirth = student.getDayOfBirth();
+	monthOfBirth = student.getMonthOfBirth();
+	yearOfBirth = student.getYearOfBirth();
+	fName = student.getFName();
+	lName = student.getLName();
+	street = student.getStreet();
+	city = student.getCity();
+	zipCode = student.getZipCode();
+	phoneNumber = student.getPhoneNumber();
+
 }
-void setParentDetails(enum Parent, Person details);
-int addNewGrade(int grade);
-int addMissingDay();
-int setMissingDays(int days);
-int addLate();
-int setLates;
+Person& Student::getMother() {
+	return motherDetails;
+}
+Person& Student::getFather() {
+	return fatherDetails;
+}
+int Student::getLate() {
+	return lates;
+}
+int Student::getMissing() {
+	return missingDays;
+}
+int Student::addMissingDay() {
+	return ++missingDays;
+}
+int Student::addLate() {
+	return ++lates;
+}
+int Student::removeMissingDay() {
+	return --missingDays;
+}
+int Student::removeLate() {
+	return --lates;
+}
