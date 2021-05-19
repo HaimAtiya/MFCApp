@@ -24,9 +24,17 @@ StudentDlgClass::~StudentDlgClass()
 BOOL StudentDlgClass::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
+	Person p1(1, L"Moshe", L"Moshe", Male, 11, 8, 1997, L"Tzliley Hanina", L"Tel Aviv", 6753080, 506383618);
+	Student* s2 = new Student(p1, p1, p1);
+	this->students->Add(s2);
+	this->students->Add(s2);
+	this->students->Add(s2);
+	allStudentDlg.students = students;
 	allStudentDlg.Create(ALL_STUDENTS, this);
 	addStudentDlg.Create(ADD_STUDENT, this);
 	deleteStudentDlg.Create(DELETE_STUDENT, this);
+	allStudentDlg.ShowWindow(SW_SHOW);
+
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
@@ -51,11 +59,7 @@ END_MESSAGE_MAP()
 //ALL STUDET LIST BTN
 void StudentDlgClass::OnBnClickedListBtn()
 {
-	/*
-		Person p1(1, L"Moshe", L"Moshe", Male, 11, 8, 1997, L"Tzliley Hanina", L"Tel Aviv", 6753080, 506383618);
-		Student *s2 = new Student(p1, p1, p1);
-		this->students->Add(s2);
-		*/
+	
 
 	deleteStudentDlg.ShowWindow(SW_HIDE);
 	addStudentDlg.ShowWindow(SW_HIDE);

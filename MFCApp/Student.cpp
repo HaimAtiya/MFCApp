@@ -19,6 +19,9 @@ void Student::Serialize(CArchive& archive) {
 	else
 		archive >> student >> motherDetails >> fatherDetails >> avarage >> missingDays >> lates;
 }
+Person Student::getStudentPersonDetails() {
+	return student;
+}
 void setParentDetails(enum Parent, Person details);
 int addNewGrade(int grade);
 int addMissingDay();
