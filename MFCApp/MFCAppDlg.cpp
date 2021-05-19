@@ -62,6 +62,7 @@ CMFCAppDlg::CMFCAppDlg(CWnd* pParent /*=nullptr*/)
 void CMFCAppDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_BUTTON1, LOGO_CONTOROL);
 }
 
 BEGIN_MESSAGE_MAP(CMFCAppDlg, CDialogEx)

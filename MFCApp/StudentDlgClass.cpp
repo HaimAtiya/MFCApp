@@ -86,7 +86,8 @@ void StudentDlgClass::OnBnClickedButton2()
 	addStudentDlg.setFormTitle(L"פרטי האבא");
 	addStudentDlg.pers = &father;
 	addStudentDlg.RunModalLoop(SW_SHOW);
-	Student* s = new Student(student, mother, father);
+	Student* s = new Student(mother, father);
+	s->setStudentDetails(student);
 	students->Add(s);
 	MessageBox(L"התלמיד נוסף בהצלחה!");
 	allStudentDlg.updateList();
@@ -99,11 +100,11 @@ void StudentDlgClass::OnBnClickedButton5()
 	Student* stdnt;
 	//fint student index in array
 	for (int i = 0; i < students->GetSize(); i++) {
-		if (students->GetAt(i)->getStudentPersonDetails().getID() == current_id)
+		if (students->GetAt(i)->getID() == current_id)
 		{
 			stdnt = students->GetAt(i);
 			CString confirm_txt;
-			confirm_txt.Format(L"האם אתה בטוח שברצונך למחוק את התלמיד %s?", stdnt->getStudentPersonDetails().getFullName());
+			confirm_txt.Format(L"האם אתה בטוח שברצונך למחוק את התלמיד %s?", stdnt->getFullName());
 			const int result = MessageBox(confirm_txt, L"מחיקת תלמיד", MB_YESNO);
 			if (result == IDYES) {
 				MessageBox(L"התלמיד נמחק בהצלחה!");

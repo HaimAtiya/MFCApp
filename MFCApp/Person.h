@@ -3,12 +3,13 @@
 class Person
 {
 private:
+
+protected:
 	int id;
 	//Sex gender;
 	int dayOfBirth;
 	int monthOfBirth;
 	int yearOfBirth;
-protected:
 	CString fName;
 	CString lName;
 	CString street;
