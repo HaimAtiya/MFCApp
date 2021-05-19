@@ -81,9 +81,16 @@ void StudentDlgClass::OnBnClickedButton2()
 //DELTE STUDENT
 void StudentDlgClass::OnBnClickedButton5()
 {
-	addStudentDlg.ShowWindow(SW_HIDE);
-	allStudentDlg.ShowWindow(SW_HIDE);
-	deleteStudentDlg.ShowWindow(SW_SHOW);
+	Student* stdnt = students->GetAt(current_id);
+	CString confirm_txt;
+	confirm_txt.Format(L"האם אתה בטוח שברצונך למחוק את התלמיד %s?", stdnt->getStudentPersonDetails().getFullName());
+	const int result = MessageBox(confirm_txt, L"מחיקת תלמיד", MB_YESNO);
+	if (result == IDYES) {
+		MessageBox(L"התלמיד נמחק בהצלחה!");
+		students->RemoveAt(current_id);
+		//Update list
+		allStudentDlg.updateList();
+	}
 }
 
 
