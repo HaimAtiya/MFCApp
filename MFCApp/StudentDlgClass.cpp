@@ -48,7 +48,7 @@ void StudentDlgClass::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(StudentDlgClass, CDialogEx)
-//	ON_BN_CLICKED(STUDENTS_LIST_BTN, &StudentDlgClass::OnBnClickedListBtn)
+	//	ON_BN_CLICKED(STUDENTS_LIST_BTN, &StudentDlgClass::OnBnClickedListBtn)
 	ON_BN_CLICKED(IDC_BUTTON2, &StudentDlgClass::OnBnClickedButton2)
 	ON_BN_CLICKED(STUDENTS_LIST_BTN, &StudentDlgClass::OnBnClickedListBtn)
 	ON_BN_CLICKED(IDC_BUTTON7, &StudentDlgClass::OnBnClickedButton7)
@@ -62,7 +62,7 @@ END_MESSAGE_MAP()
 //ALL STUDET LIST BTN
 void StudentDlgClass::OnBnClickedListBtn()
 {
-	
+
 
 	deleteStudentDlg.ShowWindow(SW_HIDE);
 	addStudentDlg.ShowWindow(SW_HIDE);
@@ -72,24 +72,47 @@ void StudentDlgClass::OnBnClickedListBtn()
 //ADD NEW STUDENT
 void StudentDlgClass::OnBnClickedButton2()
 {
+	Person student, mother, father;
+	HANDLE t1;
+	DWORD t1ID;
 	deleteStudentDlg.ShowWindow(SW_HIDE);
 	allStudentDlg.ShowWindow(SW_HIDE);
-	addStudentDlg.ShowWindow(SW_SHOW);
-
+	addStudentDlg.setFormTitle(L"פרטי התלמיד");
+	addStudentDlg.pers = &student;
+	addStudentDlg.RunModalLoop(SW_SHOW);
+	addStudentDlg.setFormTitle(L"פרטי האמא");
+	addStudentDlg.pers = &mother;
+	addStudentDlg.RunModalLoop(SW_SHOW);
+	addStudentDlg.setFormTitle(L"פרטי האבא");
+	addStudentDlg.pers = &father;
+	addStudentDlg.RunModalLoop(SW_SHOW);
+	Student* s = new Student(student, mother, father);
+	students->Add(s);
+	MessageBox(L"התלמיד נוסף בהצלחה!");
+	allStudentDlg.updateList();
+	allStudentDlg.ShowWindow(SW_SHOW);
 }
 
 //DELTE STUDENT
 void StudentDlgClass::OnBnClickedButton5()
 {
-	Student* stdnt = students->GetAt(current_id);
-	CString confirm_txt;
-	confirm_txt.Format(L"האם אתה בטוח שברצונך למחוק את התלמיד %s?", stdnt->getStudentPersonDetails().getFullName());
-	const int result = MessageBox(confirm_txt, L"מחיקת תלמיד", MB_YESNO);
-	if (result == IDYES) {
-		MessageBox(L"התלמיד נמחק בהצלחה!");
-		students->RemoveAt(current_id);
-		//Update list
-		allStudentDlg.updateList();
+	Student* stdnt;
+	//fint student index in array
+	for (int i = 0; i < students->GetSize(); i++) {
+		if (students->GetAt(i)->getStudentPersonDetails().getID() == current_id)
+		{
+			stdnt = students->GetAt(i);
+			CString confirm_txt;
+			confirm_txt.Format(L"האם אתה בטוח שברצונך למחוק את התלמיד %s?", stdnt->getStudentPersonDetails().getFullName());
+			const int result = MessageBox(confirm_txt, L"מחיקת תלמיד", MB_YESNO);
+			if (result == IDYES) {
+				MessageBox(L"התלמיד נמחק בהצלחה!");
+				students->RemoveAt(i);
+				//Update list
+				allStudentDlg.updateList();
+			}
+			return;
+		}
 	}
 }
 
@@ -134,3 +157,4 @@ void StudentDlgClass::OnBnClickedButton6()
 		allStudentDlg.updateList();
 	}
 }
+

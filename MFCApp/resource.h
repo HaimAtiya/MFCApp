@@ -22,6 +22,19 @@
 #define IDC_BUTTON7                     1010
 #define STUDENTS_LIST_BTN               1014
 #define IDC_LIST2                       1025
+#define FIRST_NAME                      1028
+#define FIRST_NAME2                     1029
+#define FIRST_NAME3                     1030
+#define FIRST_NAME4                     1031
+#define IDC_COMBO1                      1032
+#define FIRST_NAME5                     1033
+#define IDC_COMBO2                      1034
+#define FIRST_NAME6                     1035
+#define IDC_COMBO3                      1036
+#define IDC_COMBO4                      1037
+#define FIRST_NAME7                     1038
+#define ADD_STDNT_HEADER                1039
+#define IDC_SCROLLBAR1                  1040
 #define ADD_STUDENT                     57665
 
 // Next default values for new objects
@@ -30,7 +43,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        141
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1026
+#define _APS_NEXT_CONTROL_VALUE         1041
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
