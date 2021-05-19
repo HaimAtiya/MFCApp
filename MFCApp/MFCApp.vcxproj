@@ -183,6 +183,9 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AddStudentClass.h" />
+    <ClInclude Include="AllStudentsClass.h" />
+    <ClInclude Include="DeleteStudentClass.h" />
     <ClInclude Include="enums.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MFCApp.h" />
@@ -195,6 +198,9 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AddStudentClass.cpp" />
+    <ClCompile Include="AllStudentsClass.cpp" />
+    <ClCompile Include="DeleteStudentClass.cpp" />
     <ClCompile Include="MFCApp.cpp" />
     <ClCompile Include="MFCAppDlg.cpp" />
     <ClCompile Include="pch.cpp">
