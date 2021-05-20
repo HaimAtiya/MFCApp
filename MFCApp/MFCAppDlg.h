@@ -34,4 +34,5 @@ protected:
 public:
 	afx_msg void OnBnClickedButton2();
 	CButton LOGO_CONTOROL;
+	afx_msg void OnBnClickedButton1();
 };
