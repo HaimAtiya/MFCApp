@@ -43,6 +43,7 @@ void EmployeeListClass::DoDataExchange(CDataExchange* pDX)
 
 
 BEGIN_MESSAGE_MAP(EmployeeListClass, CDialogEx)
+	ON_NOTIFY(LVN_ITEMCHANGED, EMPLOYEE_LIST_CTRL, &EmployeeListClass::OnLvnItemchangedListCtrl)
 END_MESSAGE_MAP()
 
 
@@ -76,4 +77,30 @@ void EmployeeListClass::updateList() {
 		eList.SetItemText(nItem, 5, tmp);
 		eList.SetItemText(nItem, 6, w->getAddress());
 	}
+}
+
+//WHEN CHOOSING ROW
+void EmployeeListClass::OnLvnItemchangedListCtrl(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: Add your control notification handler code here
+	CPoint pt;
+	GetCursorPos(&pt);
+	eList.ScreenToClient(&pt);
+	UINT Flags;
+	int hItem = eList.HitTest(pt, &Flags);
+
+	if (Flags & LVHT_ONITEMLABEL)
+	{
+		*curr_id = _ttoi(eList.GetItemText(hItem, 0));
+		*mode = (eList.GetItemText(hItem, 4)) == L"מורה" ? 'T' : 'W';
+		DELETE_BUTTON->EnableWindow(true);
+	}
+	else {
+		if (Flags) {
+			*curr_id = NULL;
+			DELETE_BUTTON->EnableWindow(false);
+		}
+	}
+	*pResult = 0;
 }

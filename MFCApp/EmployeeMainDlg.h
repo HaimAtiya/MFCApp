@@ -16,7 +16,8 @@ public:
 	AddEmployeeClass addEmployeeDlg;
 	CTypedPtrArray< CObArray, Teacher*> Teachers;
 	CTypedPtrArray< CObArray, Worker*> Workers;
-
+	int curr_id;
+	char mode;
 
 // Dialog Data
 #ifdef AFX_DESIGN_TIME
@@ -36,4 +37,6 @@ public:
 	afx_msg void OnBnClickedLstBtn();
 	afx_msg void OnBnClickedWorkerBtn();
 	afx_msg void OnAddTchrBnClicked();
+	CButton DELETE_BUTTON;
+	afx_msg void OnBnClickedEmployeeBtn();
 };
