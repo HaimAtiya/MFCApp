@@ -45,3 +45,16 @@ void AddEmployeeClass::setFormTitle(CString title) {
 	CWnd* label = GetDlgItem(ADD_EMPLOYEE_HEADER);
 	label->SetWindowText(title);
 }
+void AddEmployeeClass::setFormMode(char mode) {
+	switch (mode)
+	{
+	case 'T':
+		setFormTitle(L"הוספת מורה חדש");
+		break;
+	case 'W':
+		setFormTitle(L"הוספת עובד חדש");
+		break;
+	default:
+		break;
+	}
+}

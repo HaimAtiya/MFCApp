@@ -10,6 +10,7 @@ class AddEmployeeClass : public CDialogEx
 public:
 	AddEmployeeClass(CWnd* pParent = nullptr);   // standard constructor
 	virtual ~AddEmployeeClass();
+	void setFormMode(char mode);// 'T' - Teacher, 'W' - Worker
 	void setFormTitle(CString title);
 // Dialog Data
 #ifdef AFX_DESIGN_TIME

@@ -139,7 +139,7 @@ void EmployeeMainDlg::OnBnClickedLstBtn()
 void EmployeeMainDlg::OnAddTchrBnClicked()
 {
 	listDlg.ShowWindow(SW_HIDE);
-	addEmployeeDlg.setFormTitle(L"הוספת מורה חדש");
+	addEmployeeDlg.setFormMode('T');
 	addEmployeeDlg.ShowWindow(SW_SHOW);
 }
 
@@ -148,7 +148,7 @@ void EmployeeMainDlg::OnAddTchrBnClicked()
 void EmployeeMainDlg::OnBnClickedWorkerBtn()
 {
 	listDlg.ShowWindow(SW_HIDE);
-	addEmployeeDlg.setFormTitle(L"הוספת עובד חדש");
+	addEmployeeDlg.setFormMode('W');
 	addEmployeeDlg.ShowWindow(SW_SHOW);
 	
 }

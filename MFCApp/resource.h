@@ -76,6 +76,34 @@
 #define EXPORT_WRKR_BTN                 1068
 #define IMPORT_WRKR_BTN                 1069
 #define EMPLOYEE_LIST_CTRL              1069
+#define EMP_PNAME_TXTBOX                1072
+#define EMP_LNAME_TXTBOX                1073
+#define EMP_ID_TXTBOX                   1074
+#define EMP_GENDER_CBOX                 1075
+#define EMP_BDAY_CBOX                   1076
+#define EMP_BMONTH_CBOX                 1077
+#define EMP_BYEAR_CBOX                  1078
+#define EMP_STREET_TXTBOX               1079
+#define EMP_CITY_TXTBOX                 1080
+#define EMP_ZIPCODE_TXTBOX              1081
+#define EMP_SALLERY_TXTBOX              1082
+#define EMP_MARRIGE_CHKBOX              1083
+#define EMP_KIDS_TXTBOX                 1084
+#define EMP_ISWORKING_CHKBOX            1085
+#define EMP_SDAY_CBOX                   1086
+#define EMP_SMONTH_CBOX                 1087
+#define EMP_SYEAR_CBOX                  1088
+#define EMP_ROLE_TXTBOX                 1089
+#define EMP_PROFFESSION_TXTBOX          1090
+#define EMP_EDUCATION_CBOX              1091
+#define EMP_ROLE_TXT                    1092
+#define EMP_EDUCATOR_CHKBOX             1093
+#define EMP_EDUCATION_CBOX2             1094
+#define EMP_ASSOCIATION_CBOX            1094
+#define EMP_PROFFESSION_TXT             1095
+#define EMP_EDUCATION_TXT               1096
+#define EMP_ASSOCIATION_TXT             1097
+#define ADD_EMPLOYEE_BTN                1098
 #define ADD_STUDENT                     57665
 
 // Next default values for new objects
@@ -84,7 +112,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        148
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1070
+#define _APS_NEXT_CONTROL_VALUE         1099
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
