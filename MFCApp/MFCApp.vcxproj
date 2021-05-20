@@ -186,6 +186,7 @@
     <ClInclude Include="AddStudentClass.h" />
     <ClInclude Include="AllStudentsClass.h" />
     <ClInclude Include="editStudentClass.h" />
+    <ClInclude Include="Employee.h" />
     <ClInclude Include="enums.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="MFCApp.h" />
@@ -201,6 +202,7 @@
     <ClCompile Include="AddStudentClass.cpp" />
     <ClCompile Include="AllStudentsClass.cpp" />
     <ClCompile Include="editStudentClass.cpp" />
+    <ClCompile Include="Employee.cpp" />
     <ClCompile Include="MFCApp.cpp" />
     <ClCompile Include="MFCAppDlg.cpp" />
     <ClCompile Include="pch.cpp">
