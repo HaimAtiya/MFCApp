@@ -79,6 +79,20 @@ void AddEmployeeClass::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, EMP_SYEAR_CBOX, SYEAR_CBOX);
 	DDX_Control(pDX, EMP_EDUCATION_CBOX, EDUCATION_CBOX);
 	DDX_Control(pDX, EMP_ASSOCIATION_CBOX, ASSOCIATION_CBOX);
+	DDX_Control(pDX, EMP_PNAME_TXTBOX, PNAME_TXTBOX);
+	DDX_Control(pDX, EMP_LNAME_TXTBOX, LNAME_TXTBOX);
+	DDX_Control(pDX, EMP_ID_TXTBOX, ID_TXTBOX);
+	DDX_Control(pDX, EMP_STREET_TXTBOX, STREET_TXTBOX);
+	DDX_Control(pDX, EMP_PHONE_TXTBOX, PHONE_TXTBOX);
+	DDX_Control(pDX, EMP_CITY_TXTBOX, CITY_TXTBOX);
+	DDX_Control(pDX, EMP_ZIPCODE_TXTBOX, ZIPCODE_TXTBOX);
+	DDX_Control(pDX, EMP_SALLERY_TXTBOX, SALLERY_TXTBOX);
+	DDX_Control(pDX, EMP_MARRIGE_CHKBOX, MARRIGE_CHKBOX);
+	DDX_Control(pDX, EMP_KIDS_TXTBOX, KIDS_TXTBOX);
+	DDX_Control(pDX, EMP_ISWORKING_CHKBOX, ISWORKING_CHKBOX);
+	DDX_Control(pDX, EMP_ROLE_TXTBOX, ROLE_TXTBOX);
+	DDX_Control(pDX, EMP_PROFFESSION_TXTBOX, PROFFESSION_TXTBOX);
+	DDX_Control(pDX, EMP_EDUCATOR_CHKBOX, EDUCATOR_CHKBOX);
 }
 
 
@@ -141,4 +155,41 @@ void AddEmployeeClass::OnBnClickedEmployeeBtn()
 	bool isWorking, isMarried, isEducator;
 	CString tmp, fName, lName, street, city, role, proffession, education, association;
 	Sex gender;
+	PNAME_TXTBOX.GetWindowText(fName);
+	PNAME_TXTBOX.GetWindowText(lName);
+	STREET_TXTBOX.GetWindowText(street);
+	CITY_TXTBOX.GetWindowText(city);
+	ID_TXTBOX.GetWindowText(tmp);
+	id = _ttoi(tmp);
+	BDAY_CBOX.GetWindowText(tmp);
+	dayOfBirth = _ttoi(tmp);
+	BMONTH_CBOX.GetWindowText(tmp);
+	monthOfBirth = _ttoi(tmp);
+	BYEAR_CBOX.GetWindowText(tmp);
+	yearOfBirth = _ttoi(tmp);
+	PHONE_TXTBOX.GetWindowText(tmp);
+	phone = _ttoi(tmp);
+	ZIPCODE_TXTBOX.GetWindowText(tmp);
+	zipCode = _ttoi(tmp);
+	gender_control.GetWindowText(tmp);
+	gender = (tmp == "זכר") ? Male : Female;
+	SALLERY_TXTBOX.GetWindowText(tmp);
+	sallery = _ttoi(tmp);
+	isMarried = MARRIGE_CHKBOX.GetCheck();
+	KIDS_TXTBOX.GetWindowText(tmp);
+	kids = _ttoi(tmp);
+	isWorking = ISWORKING_CHKBOX.GetCheck();
+	SDAY_CBOX.GetWindowText(tmp);
+	dayOfStart = _ttoi(tmp);
+	SMONTH_CBOX.GetWindowText(tmp);
+	monthOfStart = _ttoi(tmp);
+	SYEAR_CBOX.GetWindowText(tmp);
+	yearOfStart = _ttoi(tmp);
+	ROLE_TXTBOX.GetWindowText(role);
+	PROFFESSION_TXTBOX.GetWindowText(proffession);
+	EDUCATION_CBOX.GetWindowText(education);
+	isEducator = EDUCATOR_CHKBOX.GetCheck();
+	ASSOCIATION_CBOX.GetWindowText(association);
+
+	//INSERT TO CORRECT ARRAY
 }
