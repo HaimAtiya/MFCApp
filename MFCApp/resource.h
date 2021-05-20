@@ -18,6 +18,7 @@
 #define IDC_                            1001
 #define IDC_STATIC1                     1001
 #define MISSING_COUNT                   1001
+#define ADD_EMPLOYEE_HEADER             1001
 #define IDC_BUTTON1                     1003
 #define IDC_BUTTON2                     1004
 #define IDC_BUTTON5                     1007
@@ -33,6 +34,7 @@
 #define FIRST_NAME2                     1029
 #define EDIT_STUDENT                    1029
 #define FIRST_NAME3                     1030
+#define ADD_EMPLOYEE                    1030
 #define FIRST_NAME4                     1031
 #define IDC_COMBO1                      1032
 #define FIRST_NAME5                     1033

@@ -2,7 +2,7 @@
 #include "Teacher.h"
 #include "Worker.h"
 #include "EmployeeListClass.h"
-
+#include "AddEmployeeClass.h"
 // EmployeeMainDlg dialog
 
 class EmployeeMainDlg : public CDialogEx
@@ -13,6 +13,7 @@ public:
 	EmployeeMainDlg(CWnd* pParent = nullptr);   // standard constructor
 	virtual ~EmployeeMainDlg();
 	EmployeeListClass listDlg;
+	AddEmployeeClass addEmployeeDlg;
 	CTypedPtrArray< CObArray, Teacher*> Teachers;
 	CTypedPtrArray< CObArray, Worker*> Workers;
 
@@ -32,4 +33,7 @@ public:
 	afx_msg void OnExportTchrBnClicked();
 	afx_msg void OnImportWrkrBnClicked();
 	afx_msg void OnWrkrExportBnClicked();
+	afx_msg void OnBnClickedLstBtn();
+	afx_msg void OnBnClickedWorkerBtn();
+	afx_msg void OnAddTchrBnClicked();
 };
