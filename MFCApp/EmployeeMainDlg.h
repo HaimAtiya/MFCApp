@@ -27,4 +27,9 @@ protected:
 	virtual BOOL OnInitDialog();
 
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnBnClickedTchrBtn();
+	afx_msg void OnExportTchrBnClicked();
+	afx_msg void OnImportWrkrBnClicked();
+	afx_msg void OnWrkrExportBnClicked();
 };
