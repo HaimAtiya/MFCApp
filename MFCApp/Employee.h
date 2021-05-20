@@ -15,7 +15,7 @@ protected:
 	int yearOfEnd;
 public:
 	Employee() {};
-	Employee(double sallery, bool isMarried, int kids, int dayOfStart, int monthOfStart, int yearOfStart, bool isWorking, int dayOfEnd, int monthOfEnd, int yearOfEnd);
+	Employee(int id, CString fName, CString lName, Sex gender, int dayOfBirth, int monthOfBirth, int yearOfBirth, CString street, CString city, int zipCode, int phoneNumber, double sallery, bool isMarried, int kids, int dayOfStart, int monthOfStart, int yearOfStart, bool isWorking, int dayOfEnd, int monthOfEnd, int yearOfEnd);
 	void setEmployeeDetails(Person employee);
 	void setSallery(double sallery);
 	void setMarrigeStatus(bool status);

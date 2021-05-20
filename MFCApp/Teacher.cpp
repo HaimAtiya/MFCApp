@@ -14,7 +14,9 @@ int dayOfEnd;
 int monthOfEnd;
 int yearOfEnd;
 
-Teacher::Teacher(CString proffesion, CString education, bool isEducator, CString association) : Employee() {
+
+Teacher::Teacher(int id, CString fName, CString lName, Sex gender, int dayOfBirth, int monthOfBirth, int yearOfBirth, CString street, CString city, int zipCode, int phoneNumber, double sallery, bool isMarried, int kids, int dayOfStart, int monthOfStart, int yearOfStart, bool isWorking, int dayOfEnd, int monthOfEnd, int yearOfEnd, CString proffesion, CString education, bool isEducator, CString association) : 
+	Employee(id,  fName,  lName,  gender,  dayOfBirth,  monthOfBirth,  yearOfBirth,  street,  city,  zipCode,  phoneNumber,  sallery,  isMarried,  kids,  dayOfStart,  monthOfStart,  yearOfStart,  isWorking,  dayOfEnd,  monthOfEnd,  yearOfEnd) {
 	this->proffesion = proffesion;
 	this->education = education;
 	this->isEducator = isEducator;

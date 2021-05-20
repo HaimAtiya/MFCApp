@@ -10,7 +10,7 @@ private:
 public:
 	DECLARE_SERIAL(Teacher);
 	Teacher() {};
-	Teacher(CString proffesion, CString education, bool isEducator, CString association);
+	Teacher(int id, CString fName, CString lName, Sex gender, int dayOfBirth, int monthOfBirth, int yearOfBirth, CString street, CString city, int zipCode, int phoneNumber, double sallery, bool isMarried, int kids, int dayOfStart, int monthOfStart, int yearOfStart, bool isWorking, int dayOfEnd, int monthOfEnd, int yearOfEnd, CString proffesion, CString education, bool isEducator, CString association);
 	void Serialize(CArchive& archive);
 	void setProffesion(CString proffesion);
 	void setEducation(CString education);

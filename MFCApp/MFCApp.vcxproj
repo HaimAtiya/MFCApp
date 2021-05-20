@@ -183,6 +183,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AddEmployeeClass.h" />
     <ClInclude Include="AddStudentClass.h" />
     <ClInclude Include="AllStudentsClass.h" />
     <ClInclude Include="editStudentClass.h" />
@@ -203,6 +204,7 @@
     <ClInclude Include="Worker.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AddEmployeeClass.cpp" />
     <ClCompile Include="AddStudentClass.cpp" />
     <ClCompile Include="AllStudentsClass.cpp" />
     <ClCompile Include="editStudentClass.cpp" />
