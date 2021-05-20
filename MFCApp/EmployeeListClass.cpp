@@ -57,10 +57,11 @@ void EmployeeListClass::updateList() {
 		nItem = eList.InsertItem(0, tmp);
 		eList.SetItemText(nItem, 1, t->getFName());
 		eList.SetItemText(nItem, 2, t->getLName());
-		eList.SetItemText(nItem, 3, L"מורה");
-		tmp.Format(_T("%s"), t->getWorkingStatus() ? "כן" : "לא");
-		eList.SetItemText(nItem, 4, tmp);
-		eList.SetItemText(nItem, 5, t->getAddress());
+		eList.SetItemText(nItem, 3, t->getBirthDay());
+		eList.SetItemText(nItem, 4, L"מורה");
+		tmp.Format(_T("%s"), (t->getWorkingStatus()) ? L"כן" : L"לא");
+		eList.SetItemText(nItem, 5, tmp);
+		eList.SetItemText(nItem, 6, t->getAddress());
 	}
 	//Workers
 	for (int i = 0; i < Workers->GetSize(); i++) {
@@ -69,9 +70,10 @@ void EmployeeListClass::updateList() {
 		nItem = eList.InsertItem(0, tmp);
 		eList.SetItemText(nItem, 1, w->getFName());
 		eList.SetItemText(nItem, 2, w->getLName());
-		eList.SetItemText(nItem, 3, L"איש צוות");
-		tmp.Format(_T("%s"), w->getWorkingStatus() ? "כן" : "לא");
-		eList.SetItemText(nItem, 4, tmp);
-		eList.SetItemText(nItem, 5, w->getAddress());
+		eList.SetItemText(nItem, 3, w->getBirthDay());
+		eList.SetItemText(nItem, 4, L"איש צוות");
+		tmp.Format(_T("%s"), w->getWorkingStatus() ? L"כן" : L"לא");
+		eList.SetItemText(nItem, 5, tmp);
+		eList.SetItemText(nItem, 6, w->getAddress());
 	}
 }

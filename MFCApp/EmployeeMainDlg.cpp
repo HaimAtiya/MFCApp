@@ -26,6 +26,9 @@ BOOL EmployeeMainDlg::OnInitDialog()
 	CDialogEx::OnInitDialog();
 	listDlg.Teachers = &Teachers;
 	listDlg.Workers = &Workers;
+	addEmployeeDlg.listDlg = &listDlg;
+	addEmployeeDlg.Teachers = &Teachers;
+	addEmployeeDlg.Workers = &Workers;
 	listDlg.Create(EMPLOYEE_LIST, this);
 	addEmployeeDlg.Create(ADD_EMPLOYEE, this);
 	listDlg.ShowWindow(SW_SHOW);
@@ -141,6 +144,7 @@ void EmployeeMainDlg::OnAddTchrBnClicked()
 	listDlg.ShowWindow(SW_HIDE);
 	addEmployeeDlg.setFormMode('T');
 	addEmployeeDlg.ShowWindow(SW_SHOW);
+	listDlg.updateList();
 }
 
 
@@ -150,6 +154,6 @@ void EmployeeMainDlg::OnBnClickedWorkerBtn()
 	listDlg.ShowWindow(SW_HIDE);
 	addEmployeeDlg.setFormMode('W');
 	addEmployeeDlg.ShowWindow(SW_SHOW);
-	
+	listDlg.updateList();
 }
 

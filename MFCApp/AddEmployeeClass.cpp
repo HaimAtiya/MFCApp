@@ -25,8 +25,6 @@ BOOL AddEmployeeClass::OnInitDialog()
 {
 	CString num;
 	CDialogEx::OnInitDialog();
-
-
 	gender_control.AddString(L"זכר");
 	gender_control.AddString(L"נקבה");
 	gender_control.SetCurSel(0);
@@ -192,4 +190,50 @@ void AddEmployeeClass::OnBnClickedEmployeeBtn()
 	ASSOCIATION_CBOX.GetWindowText(association);
 
 	//INSERT TO CORRECT ARRAY
+	switch (mode)
+	{
+	case 'T': {
+		Teacher* t = new Teacher(id, fName, lName, gender, dayOfBirth, monthOfBirth, yearOfBirth, street, city, zipCode, phone, sallery, isMarried, kids, dayOfStart, monthOfStart, yearOfStart, isWorking, NULL, NULL, NULL, proffession, education, isEducator, association);
+		Teachers->Add(t);
+	}
+		break;
+	case 'W': {
+		Worker* w = new Worker(id, fName, lName, gender, dayOfBirth, monthOfBirth, yearOfBirth, street, city, zipCode, phone, sallery, isMarried, kids, dayOfStart, monthOfStart, yearOfStart, isWorking, NULL, NULL, NULL, role);
+		Workers->Add(w);
+	}
+		break;
+	default:
+		break;
+	}
+	listDlg->updateList();
+	MessageBox(L"איש הצוות נוסף בהצלחה!");
+	resetControls();
+	EndDialog(0);
+	listDlg->ShowWindow(SW_SHOW);
+}
+
+void AddEmployeeClass::resetControls() {
+	gender_control.SetCurSel(0);
+	BDAY_CBOX.SetCurSel(0);
+	BMONTH_CBOX.SetCurSel(0);
+	BYEAR_CBOX.SetCurSel(0);
+	PNAME_TXTBOX.SetWindowText(L"");
+	LNAME_TXTBOX.SetWindowText(L"");
+	ID_TXTBOX.SetWindowText(L"");
+	PHONE_TXTBOX.SetWindowText(L"");
+	STREET_TXTBOX.SetWindowText(L"");
+	CITY_TXTBOX.SetWindowText(L"");
+	ZIPCODE_TXTBOX.SetWindowText(L"");
+	SALLERY_TXTBOX.SetWindowText(L"");
+	MARRIGE_CHKBOX.SetCheck(0);
+	KIDS_TXTBOX.SetWindowText(L"");
+	ISWORKING_CHKBOX.SetCheck(0);
+	SDAY_CBOX.SetCurSel(0);
+	SMONTH_CBOX.SetCurSel(0);
+	SYEAR_CBOX.SetCurSel(0);
+	ROLE_TXTBOX.SetWindowText(L"");
+	PROFFESSION_TXTBOX.SetWindowText(L"");
+	EDUCATION_CBOX.SetCurSel(0);
+	EDUCATOR_CHKBOX.SetCheck(0);
+	ASSOCIATION_CBOX.SetCurSel(0);
 }

@@ -1,6 +1,8 @@
 #pragma once
 #include "enums.h"
-
+#include "Teacher.h"
+#include "Worker.h"
+#include "EmployeeListClass.h"
 // AddEmployeeClass dialog
 
 class AddEmployeeClass : public CDialogEx
@@ -12,8 +14,11 @@ public:
 	virtual ~AddEmployeeClass();
 	void setFormMode(char mode);// 'T' - Teacher, 'W' - Worker
 	void setFormTitle(CString title);
+	CTypedPtrArray< CObArray, Teacher*> *Teachers;
+	CTypedPtrArray< CObArray, Worker*> *Workers;
 	CWnd* label;
 	char mode;
+	EmployeeListClass *listDlg;
 // Dialog Data
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = ADD_EMPLOYEE };
@@ -25,6 +30,7 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 public:
+	void resetControls();
 	CStatic header_title;
 	afx_msg void OnStnClickedEmployeeHeader();
 	afx_msg void OnBnClickedEmployeeBtn();
