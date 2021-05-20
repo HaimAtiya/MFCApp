@@ -26,6 +26,9 @@ BOOL EmployeeMainDlg::OnInitDialog()
 	CDialogEx::OnInitDialog();
 	listDlg.Teachers = &Teachers;
 	listDlg.Workers = &Workers;
+	listDlg.DELETE_BUTTON = &DELETE_BUTTON;
+	listDlg.curr_id = &curr_id;
+	listDlg.mode = &mode;
 	addEmployeeDlg.listDlg = &listDlg;
 	addEmployeeDlg.Teachers = &Teachers;
 	addEmployeeDlg.Workers = &Workers;
@@ -38,6 +41,7 @@ BOOL EmployeeMainDlg::OnInitDialog()
 void EmployeeMainDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, DELETE_EMPLOYEE_BTN, DELETE_BUTTON);
 }
 
 
@@ -49,6 +53,7 @@ BEGIN_MESSAGE_MAP(EmployeeMainDlg, CDialogEx)
 	ON_BN_CLICKED(EMPLOYEE_LST_BTN, &EmployeeMainDlg::OnBnClickedLstBtn)
 	ON_BN_CLICKED(ADD_WORKER_BTN, &EmployeeMainDlg::OnBnClickedWorkerBtn)
 	ON_BN_CLICKED(ADD_TCHR_BTN, &EmployeeMainDlg::OnAddTchrBnClicked)
+	ON_BN_CLICKED(DELETE_EMPLOYEE_BTN, &EmployeeMainDlg::OnBnClickedEmployeeBtn)
 END_MESSAGE_MAP()
 
 
@@ -157,3 +162,48 @@ void EmployeeMainDlg::OnBnClickedWorkerBtn()
 	listDlg.updateList();
 }
 
+
+//DELETE EMPLOYEE BUTTON
+void EmployeeMainDlg::OnBnClickedEmployeeBtn()
+{
+	if (mode == 'T') {
+		Teacher* t;
+		//fint student index in array
+		for (int i = 0; i < Teachers.GetSize(); i++) {
+			if (Teachers.GetAt(i)->getID() == curr_id)
+			{
+				t = Teachers.GetAt(i);
+				CString confirm_txt;
+				confirm_txt.Format(L"האם אתה בטוח שברצונך למחוק את המורה %s?", t->getFullName());
+				const int result = MessageBox(confirm_txt, L"מחיקת מורה", MB_YESNO);
+				if (result == IDYES) {
+					MessageBox(L"המורה נמחק בהצלחה!");
+					Teachers.RemoveAt(i);
+					//Update list
+					listDlg.updateList();
+				}
+				return;
+			}
+		}
+	}
+	if (mode == 'W') {
+		Worker* w;
+		//fint student index in array
+		for (int i = 0; i < Workers.GetSize(); i++) {
+			if (Workers.GetAt(i)->getID() == curr_id)
+			{
+				w = Workers.GetAt(i);
+				CString confirm_txt;
+				confirm_txt.Format(L"האם אתה בטוח שברצונך למחוק את העובד %s?", w->getFullName());
+				const int result = MessageBox(confirm_txt, L"מחיקת עובד", MB_YESNO);
+				if (result == IDYES) {
+					MessageBox(L"העובד נמחק בהצלחה!");
+					Workers.RemoveAt(i);
+					//Update list
+					listDlg.updateList();
+				}
+				return;
+			}
+		}
+	}
+}

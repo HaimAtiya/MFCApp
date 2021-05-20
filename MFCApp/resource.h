@@ -104,7 +104,6 @@
 #define EMP_EDUCATION_TXT               1096
 #define EMP_ASSOCIATION_TXT             1097
 #define ADD_EMPLOYEE_BTN                1098
-#define EMP_ZIPCODE_TXTBOX2             1099
 #define EMP_PHONE_TXTBOX                1099
 #define ADD_STUDENT                     57665
 
