@@ -2,7 +2,7 @@
 #include "Person.h"
 class Employee : public Person
 {
-private:
+protected:
 	double sallery;
 	bool isMarried;
 	int kids;
