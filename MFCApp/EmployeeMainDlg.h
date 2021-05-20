@@ -1,5 +1,7 @@
 #pragma once
-
+#include "Teacher.h"
+#include "Worker.h"
+#include "EmployeeListClass.h"
 
 // EmployeeMainDlg dialog
 
@@ -10,6 +12,10 @@ class EmployeeMainDlg : public CDialogEx
 public:
 	EmployeeMainDlg(CWnd* pParent = nullptr);   // standard constructor
 	virtual ~EmployeeMainDlg();
+	EmployeeListClass listDlg;
+	CTypedPtrArray< CObArray, Teacher*> Teachers;
+	CTypedPtrArray< CObArray, Worker*> Workers;
+
 
 // Dialog Data
 #ifdef AFX_DESIGN_TIME
@@ -18,6 +24,7 @@ public:
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+	virtual BOOL OnInitDialog();
 
 	DECLARE_MESSAGE_MAP()
 };

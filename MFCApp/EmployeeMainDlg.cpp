@@ -21,6 +21,14 @@ EmployeeMainDlg::~EmployeeMainDlg()
 {
 }
 
+BOOL EmployeeMainDlg::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+	listDlg.Create(EMPLOYEE_LIST, this);
+	listDlg.ShowWindow(SW_SHOW);
+	return TRUE;  // return TRUE  unless you set the focus to a control
+}
+
 void EmployeeMainDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);

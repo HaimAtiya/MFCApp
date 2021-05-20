@@ -14,6 +14,7 @@
 #define IDB_BITMAP2                     141
 #define IDB_BITMAP3                     142
 #define EMPLOYEE_MAIN                   143
+#define EMPLOYEE_LIST                   147
 #define IDC_                            1001
 #define IDC_STATIC1                     1001
 #define MISSING_COUNT                   1001
@@ -70,18 +71,18 @@
 #define DELETE_EMPLOYEE_BTN             1065
 #define IMPORT_TCHR_BTN                 1066
 #define EXPORT_TCHR_BTN                 1067
-#define EXPORT_TCHR_BTN2                1068
 #define EXPORT_WRKR_BTN                 1068
 #define IMPORT_WRKR_BTN                 1069
+#define EMPLOYEE_LIST_CTRL              1069
 #define ADD_STUDENT                     57665
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        145
+#define _APS_NEXT_RESOURCE_VALUE        148
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1068
+#define _APS_NEXT_CONTROL_VALUE         1070
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

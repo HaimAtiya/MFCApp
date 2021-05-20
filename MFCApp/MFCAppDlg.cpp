@@ -8,7 +8,7 @@
 #include "MFCAppDlg.h"
 #include "afxdialogex.h"
 #include "StudentDlgClass.h"
-
+#include "EmployeeMainDlg.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -171,5 +171,6 @@ void CMFCAppDlg::OnBnClickedButton2() {
 
 void CMFCAppDlg::OnBnClickedButton1()
 {
-	// TODO: Add your control notification handler code here
+	EmployeeMainDlg dlg;
+	dlg.DoModal();
 }
