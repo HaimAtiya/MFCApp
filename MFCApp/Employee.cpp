@@ -1,7 +1,8 @@
 #include "pch.h"
 #include "Employee.h"
 
-Employee::Employee(double sallery, bool isMarried, int kids, int dayOfStart, int monthOfStart, int yearOfStart, bool isWorking, int dayOfEnd, int monthOfEnd, int yearOfEnd) : Person() {
+Employee::Employee(int id, CString fName, CString lName, Sex gender, int dayOfBirth, int monthOfBirth, int yearOfBirth, CString street, CString city, int zipCode, int phoneNumber, double sallery, bool isMarried, int kids, int dayOfStart, int monthOfStart, int yearOfStart, bool isWorking, int dayOfEnd, int monthOfEnd, int yearOfEnd) : 
+	Person(id, fName,  lName,  gender,  dayOfBirth,  monthOfBirth,  yearOfBirth,  street,  city,  zipCode,  phoneNumber) {
 	this->sallery = sallery;
 	this->isMarried = isMarried;
 	this->kids = kids;
