@@ -1,5 +1,6 @@
 #pragma once
-
+#include "Teacher.h"
+#include "Worker.h"
 
 // EmployeeListClass dialog
 
@@ -10,7 +11,9 @@ class EmployeeListClass : public CDialogEx
 public:
 	EmployeeListClass(CWnd* pParent = nullptr);   // standard constructor
 	virtual ~EmployeeListClass();
-
+	CTypedPtrArray< CObArray, Teacher*> *Teachers;
+	CTypedPtrArray< CObArray, Worker*> *Workers;
+	void updateList();
 
 // Dialog Data
 #ifdef AFX_DESIGN_TIME
