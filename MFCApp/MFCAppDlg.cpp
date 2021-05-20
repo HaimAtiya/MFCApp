@@ -70,6 +70,7 @@ BEGIN_MESSAGE_MAP(CMFCAppDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BUTTON2, &CMFCAppDlg::OnBnClickedButton2)
+	ON_BN_CLICKED(IDC_BUTTON1, &CMFCAppDlg::OnBnClickedButton1)
 END_MESSAGE_MAP()
 
 
@@ -163,9 +164,12 @@ HCURSOR CMFCAppDlg::OnQueryDragIcon()
 void CMFCAppDlg::OnBnClickedButton2() {
 
 	StudentDlgClass dlg;
-	//Person p(1, L"Haim", L"Atiya", Male, 31, 8, 1997, L"Tzliley Hanina", L"Tel Aviv", 6753080, 506383618);
-	//Student s1(p, p, p);
-	//students.Add(&s1);
 	dlg.students = &students;
 	dlg.DoModal();
+}
+
+
+void CMFCAppDlg::OnBnClickedButton1()
+{
+	// TODO: Add your control notification handler code here
 }
