@@ -1,4 +1,4 @@
-// EmployeeMainDlg.cpp : implementation file
+﻿// EmployeeMainDlg.cpp : implementation file
 //
 
 #include "pch.h"
