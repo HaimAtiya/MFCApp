@@ -27,8 +27,8 @@ BOOL AddStudentClass::OnInitDialog()
 	CDialogEx::OnInitDialog();
 
 
-	gender_control.AddString(L"æëø");
-	gender_control.AddString(L"ð÷áä");
+	gender_control.AddString(L"×–×›×¨");
+	gender_control.AddString(L"× ×§×‘×”");
 	gender_control.SetCurSel(0);
 	//INIT DAYS
 	for (int i = 1; i <= 31; i++) {
@@ -122,7 +122,7 @@ void AddStudentClass::OnBnClickedButton1()
 	ZIPCODE_TXTBOX.GetWindowText(tmp);
 	zipCode = _ttoi(tmp);
 	gender_control.GetWindowText(tmp);
-	gender = (tmp == "æëø") ? Male : Female;
+	gender = (tmp == "×–×›×¨") ? Male : Female;
 	*pers = *(new Person(id, fName, lName, gender, dayOfBirth, monthOfBirth, yearOfBirth, street, city, zipCode, phone));
 	EndDialog(0);
 	resetControls();

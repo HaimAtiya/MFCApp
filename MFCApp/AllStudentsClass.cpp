@@ -27,11 +27,11 @@ BOOL AllStudentsClass::OnInitDialog()
 	CDialogEx::OnInitDialog();
 
 	sList.SetExtendedStyle(sList.GetExtendedStyle() |LVS_EX_FULLROWSELECT);
-	sList.InsertColumn(0, L"ϊςεγϊ ζδεϊ", LVCFMT_CENTER, 80);
-	sList.InsertColumn(1, L"ων τψθι", LVCFMT_CENTER, 85);
-	sList.InsertColumn(2, L"ων ξωτηδ", LVCFMT_CENTER, 85);
-	sList.InsertColumn(3, L"ϊΰψικ μιγδ", LVCFMT_CENTER, 80);
-	sList.InsertColumn(4, L"λϊεαϊ", LVCFMT_CENTER, 200);
+	sList.InsertColumn(0, L"ΧªΧΆΧ•Χ“Χª Χ–Χ”Χ•Χª", LVCFMT_CENTER, 80);
+	sList.InsertColumn(1, L"Χ©Χ Χ¤Χ¨ΧΧ™", LVCFMT_CENTER, 85);
+	sList.InsertColumn(2, L"Χ©Χ ΧΧ©Χ¤Χ—Χ”", LVCFMT_CENTER, 85);
+	sList.InsertColumn(3, L"ΧªΧΧ¨Χ™Χ ΧΧ™Χ“Χ”", LVCFMT_CENTER, 80);
+	sList.InsertColumn(4, L"Χ›ΧªΧ•Χ‘Χª", LVCFMT_CENTER, 200);
 	updateList();
 
 

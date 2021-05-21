@@ -25,8 +25,8 @@ BOOL AddEmployeeClass::OnInitDialog()
 {
 	CString num;
 	CDialogEx::OnInitDialog();
-	gender_control.AddString(L"æëø");
-	gender_control.AddString(L"ð÷áä");
+	gender_control.AddString(L"×–×›×¨");
+	gender_control.AddString(L"× ×§×‘×”");
 	gender_control.SetCurSel(0);
 	//INIT DAYS
 	for (int i = 1; i <= 31; i++) {
@@ -53,13 +53,13 @@ BOOL AddEmployeeClass::OnInitDialog()
 	}
 	BYEAR_CBOX.SetCurSel(0);
 	SYEAR_CBOX.SetCurSel(0);
-	EDUCATION_CBOX.AddString(L"úåàø øàùåï");
-	EDUCATION_CBOX.AddString(L"úåàø ùðé");
-	EDUCATION_CBOX.AddString(L"ãå÷èåøè");
-	EDUCATION_CBOX.AddString(L"ôøåôñåøä");
+	EDUCATION_CBOX.AddString(L"×ª×•××¨ ×¨××©×•×Ÿ");
+	EDUCATION_CBOX.AddString(L"×ª×•××¨ ×©× ×™");
+	EDUCATION_CBOX.AddString(L"×“×•×§×˜×•×¨×˜");
+	EDUCATION_CBOX.AddString(L"×¤×¨×•×¤×¡×•×¨×”");
 	EDUCATION_CBOX.SetCurSel(0);
-	ASSOCIATION_CBOX.AddString(L"äñúãøåú äîåøéí");
-	ASSOCIATION_CBOX.AddString(L"àøâåï äîåøéí");
+	ASSOCIATION_CBOX.AddString(L"×”×¡×ª×“×¨×•×ª ×”×ž×•×¨×™×");
+	ASSOCIATION_CBOX.AddString(L"××¨×’×•×Ÿ ×”×ž×•×¨×™×");
 	ASSOCIATION_CBOX.SetCurSel(0);
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -117,7 +117,7 @@ void AddEmployeeClass::setFormMode(char mode) {
 	switch (mode)
 	{
 	case 'T':
-		setFormTitle(L"äåñôú îåøä çãù");
+		setFormTitle(L"×”×•×¡×¤×ª ×ž×•×¨×” ×—×“×©");
 		GetDlgItem(EMP_ROLE_TXT)->ShowWindow(SW_HIDE);
 		GetDlgItem(EMP_ROLE_TXTBOX)->ShowWindow(SW_HIDE);
 		GetDlgItem(EMP_PROFFESSION_TXT)->ShowWindow(SW_SHOW);
@@ -129,7 +129,7 @@ void AddEmployeeClass::setFormMode(char mode) {
 		GetDlgItem(EMP_ASSOCIATION_CBOX)->ShowWindow(SW_SHOW);
 		break;
 	case 'W':
-		setFormTitle(L"äåñôú òåáã çãù");
+		setFormTitle(L"×”×•×¡×¤×ª ×¢×•×‘×“ ×—×“×©");
 		GetDlgItem(EMP_PROFFESSION_TXT)->ShowWindow(SW_HIDE);
 		GetDlgItem(EMP_PROFFESSION_TXTBOX)->ShowWindow(SW_HIDE);
 		GetDlgItem(EMP_EDUCATION_TXT)->ShowWindow(SW_HIDE);
@@ -170,7 +170,7 @@ void AddEmployeeClass::OnBnClickedEmployeeBtn()
 	ZIPCODE_TXTBOX.GetWindowText(tmp);
 	zipCode = _ttoi(tmp);
 	gender_control.GetWindowText(tmp);
-	gender = (tmp == "æëø") ? Male : Female;
+	gender = (tmp == "×–×›×¨") ? Male : Female;
 	SALLERY_TXTBOX.GetWindowText(tmp);
 	sallery = _ttoi(tmp);
 	isMarried = MARRIGE_CHKBOX.GetCheck();
@@ -206,7 +206,7 @@ void AddEmployeeClass::OnBnClickedEmployeeBtn()
 		break;
 	}
 	listDlg->updateList();
-	MessageBox(L"àéù äöååú ðåñó áäöìçä!");
+	MessageBox(L"××™×© ×”×¦×•×•×ª × ×•×¡×£ ×‘×”×¦×œ×—×”!");
 	resetControls();
 	EndDialog(0);
 	listDlg->ShowWindow(SW_SHOW);

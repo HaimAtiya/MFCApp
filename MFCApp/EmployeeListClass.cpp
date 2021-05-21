@@ -24,13 +24,13 @@ BOOL EmployeeListClass::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 	eList.SetExtendedStyle(eList.GetExtendedStyle() | LVS_EX_FULLROWSELECT);
-	eList.InsertColumn(0, L"úòåãú æäåú", LVCFMT_CENTER, 80);
-	eList.InsertColumn(1, L"ùí ôøèé", LVCFMT_CENTER, 85);
-	eList.InsertColumn(2, L"ùí îùôçä", LVCFMT_CENTER, 85);
-	eList.InsertColumn(3, L"úàøéê ìéãä", LVCFMT_CENTER, 80);
-	eList.InsertColumn(4, L"ñåâ", LVCFMT_CENTER, 80);
-	eList.InsertColumn(5, L"ôòéì?", LVCFMT_CENTER, 80);
-	eList.InsertColumn(6, L"ëúåáú", LVCFMT_CENTER, 174);
+	eList.InsertColumn(0, L"×ª×¢×•×“×ª ×–×”×•×ª", LVCFMT_CENTER, 80);
+	eList.InsertColumn(1, L"×©× ×¤×¨×˜×™", LVCFMT_CENTER, 85);
+	eList.InsertColumn(2, L"×©× ×ž×©×¤×—×”", LVCFMT_CENTER, 85);
+	eList.InsertColumn(3, L"×ª××¨×™×š ×œ×™×“×”", LVCFMT_CENTER, 80);
+	eList.InsertColumn(4, L"×¡×•×’", LVCFMT_CENTER, 80);
+	eList.InsertColumn(5, L"×¤×¢×™×œ?", LVCFMT_CENTER, 80);
+	eList.InsertColumn(6, L"×›×ª×•×‘×ª", LVCFMT_CENTER, 174);
 	updateList();
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -59,8 +59,8 @@ void EmployeeListClass::updateList() {
 		eList.SetItemText(nItem, 1, t->getFName());
 		eList.SetItemText(nItem, 2, t->getLName());
 		eList.SetItemText(nItem, 3, t->getBirthDay());
-		eList.SetItemText(nItem, 4, L"îåøä");
-		tmp.Format(_T("%s"), (t->getWorkingStatus()) ? L"ëï" : L"ìà");
+		eList.SetItemText(nItem, 4, L"×ž×•×¨×”");
+		tmp.Format(_T("%s"), (t->getWorkingStatus()) ? L"×›×Ÿ" : L"×œ×");
 		eList.SetItemText(nItem, 5, tmp);
 		eList.SetItemText(nItem, 6, t->getAddress());
 	}
@@ -72,8 +72,8 @@ void EmployeeListClass::updateList() {
 		eList.SetItemText(nItem, 1, w->getFName());
 		eList.SetItemText(nItem, 2, w->getLName());
 		eList.SetItemText(nItem, 3, w->getBirthDay());
-		eList.SetItemText(nItem, 4, L"àéù öååú");
-		tmp.Format(_T("%s"), w->getWorkingStatus() ? L"ëï" : L"ìà");
+		eList.SetItemText(nItem, 4, L"××™×© ×¦×•×•×ª");
+		tmp.Format(_T("%s"), w->getWorkingStatus() ? L"×›×Ÿ" : L"×œ×");
 		eList.SetItemText(nItem, 5, tmp);
 		eList.SetItemText(nItem, 6, w->getAddress());
 	}
@@ -93,7 +93,7 @@ void EmployeeListClass::OnLvnItemchangedListCtrl(NMHDR* pNMHDR, LRESULT* pResult
 	if (Flags & LVHT_ONITEMLABEL)
 	{
 		*curr_id = _ttoi(eList.GetItemText(hItem, 0));
-		*mode = (eList.GetItemText(hItem, 4)) == L"îåøä" ? 'T' : 'W';
+		*mode = (eList.GetItemText(hItem, 4)) == L"×ž×•×¨×”" ? 'T' : 'W';
 		DELETE_BUTTON->EnableWindow(true);
 	}
 	else {

@@ -68,19 +68,19 @@ void StudentDlgClass::OnBnClickedButton2()
 	HANDLE t1;
 	DWORD t1ID;
 	allStudentDlg.ShowWindow(SW_HIDE);
-	addStudentDlg.setFormTitle(L"τψθι δϊμξιγ");
+	addStudentDlg.setFormTitle(L"Χ¤Χ¨ΧΧ™ Χ”ΧªΧΧΧ™Χ“");
 	addStudentDlg.pers = &student;
 	addStudentDlg.RunModalLoop(SW_SHOW);
-	addStudentDlg.setFormTitle(L"τψθι δΰξΰ");
+	addStudentDlg.setFormTitle(L"Χ¤Χ¨ΧΧ™ Χ”ΧΧΧ");
 	addStudentDlg.pers = &mother;
 	addStudentDlg.RunModalLoop(SW_SHOW);
-	addStudentDlg.setFormTitle(L"τψθι δΰαΰ");
+	addStudentDlg.setFormTitle(L"Χ¤Χ¨ΧΧ™ Χ”ΧΧ‘Χ");
 	addStudentDlg.pers = &father;
 	addStudentDlg.RunModalLoop(SW_SHOW);
 	Student* s = new Student(mother, father);
 	s->setStudentDetails(student);
 	students->Add(s);
-	MessageBox(L"δϊμξιγ περσ αδφμηδ!");
+	MessageBox(L"Χ”ΧªΧΧΧ™Χ“ Χ Χ•Χ΅Χ£ Χ‘Χ”Χ¦ΧΧ—Χ”!");
 	allStudentDlg.updateList();
 	allStudentDlg.ShowWindow(SW_SHOW);
 }
@@ -95,10 +95,10 @@ void StudentDlgClass::OnBnClickedButton5()
 		{
 			stdnt = students->GetAt(i);
 			CString confirm_txt;
-			confirm_txt.Format(L"δΰν ΰϊδ αθεη ωαψφεπκ μξηεχ ΰϊ δϊμξιγ %s?", stdnt->getFullName());
-			const int result = MessageBox(confirm_txt, L"ξηιχϊ ϊμξιγ", MB_YESNO);
+			confirm_txt.Format(L"Χ”ΧΧ ΧΧªΧ” Χ‘ΧΧ•Χ— Χ©Χ‘Χ¨Χ¦Χ•Χ Χ ΧΧΧ—Χ•Χ§ ΧΧª Χ”ΧªΧΧΧ™Χ“ %s?", stdnt->getFullName());
+			const int result = MessageBox(confirm_txt, L"ΧΧ—Χ™Χ§Χª ΧªΧΧΧ™Χ“", MB_YESNO);
 			if (result == IDYES) {
-				MessageBox(L"δϊμξιγ πξηχ αδφμηδ!");
+				MessageBox(L"Χ”ΧªΧΧΧ™Χ“ Χ ΧΧ—Χ§ Χ‘Χ”Χ¦ΧΧ—Χ”!");
 				students->RemoveAt(i);
 				//Update list
 				allStudentDlg.updateList();
@@ -125,7 +125,7 @@ void StudentDlgClass::OnBnClickedButton7()
 		students->Serialize(ar);
 		ar.Close();
 		file.Close();
-		MessageBox(L"ψωιξϊ δϊμξιγιν πωξψδ αδφμηδ!");
+		MessageBox(L"Χ¨Χ©Χ™ΧΧª Χ”ΧªΧΧΧ™Χ“Χ™Χ Χ Χ©ΧΧ¨Χ” Χ‘Χ”Χ¦ΧΧ—Χ”!");
 	}
 }
 
@@ -143,7 +143,7 @@ void StudentDlgClass::OnBnClickedButton6()
 		students->Serialize(ar);
 		ar.Close();
 		file.Close();
-		MessageBox(L"ψωιξϊ δϊμξιγιν πθςπδ αδφμηδ!");
+		MessageBox(L"Χ¨Χ©Χ™ΧΧª Χ”ΧªΧΧΧ™Χ“Χ™Χ Χ ΧΧΆΧ Χ” Χ‘Χ”Χ¦ΧΧ—Χ”!");
 
 		//Update list
 		allStudentDlg.updateList();

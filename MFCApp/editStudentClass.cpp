@@ -46,7 +46,7 @@ BOOL editStudentClass::OnInitDialog()
 	S_PHONE.SetWindowText(tmp);
 	tmp.Format(L"%d", student->getZipCode());
 	S_ZIPCODE.SetWindowText(tmp);
-	S_GENDER.AddString(L"ζλψ");
+	S_GENDER.AddString(L"Χ–Χ›Χ¨");
 	S_GENDER.SetCurSel(0);
 	tmp.Format(L"%d", student->getDayOfBirth());
 	S_DAY.AddString(tmp);
@@ -76,7 +76,7 @@ BOOL editStudentClass::OnInitDialog()
 	M_PHONE.SetWindowText(tmp);
 	tmp.Format(L"%d", student->getMother().getZipCode());
 	M_ZIPCODE.SetWindowText(tmp);
-	M_GENDER.AddString(L"πχαδ");
+	M_GENDER.AddString(L"Χ Χ§Χ‘Χ”");
 	M_GENDER.SetCurSel(0);
 	tmp.Format(L"%d", student->getMother().getDayOfBirth());
 	M_DAY.AddString(tmp);
@@ -99,7 +99,7 @@ BOOL editStudentClass::OnInitDialog()
 	F_PHONE.SetWindowText(tmp);
 	tmp.Format(L"%d", student->getFather().getZipCode());
 	F_ZIPCODE.SetWindowText(tmp);
-	F_GENDER.AddString(L"ζλψ");
+	F_GENDER.AddString(L"Χ–Χ›Χ¨");
 	F_GENDER.SetCurSel(0);
 	tmp.Format(L"%d", student->getFather().getDayOfBirth());
 	F_DAY.AddString(tmp);
@@ -242,7 +242,7 @@ void editStudentClass::OnBnClickedButton1()
 	F_ZIPCODE.GetWindowText(tmp);
 	student->getFather().setZipCode(_ttoi(tmp));
 
-	MessageBox(L"δϊμξιγ ςεγλο αδφμηδ!");
+	MessageBox(L"Χ”ΧªΧΧΧ™Χ“ ΧΆΧ•Χ“Χ›Χ Χ‘Χ”Χ¦ΧΧ—Χ”!");
 	updateList();
 	EndDialog(0);
 
