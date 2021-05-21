@@ -111,6 +111,7 @@
 #define EMP_EMONTH_CBOX                 1100
 #define EMP_EYEAR_CBOX                  1101
 #define SAVE_EMP_BTN                    1102
+#define TCHR_PDAGOGI_TEXT               1103
 #define WINVER                          0x0500
 #define ADD_STUDENT                     57665
 
@@ -120,7 +121,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        150
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1103
+#define _APS_NEXT_CONTROL_VALUE         1104
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

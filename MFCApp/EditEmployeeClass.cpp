@@ -30,6 +30,7 @@ END_MESSAGE_MAP()
 BOOL EditEmployeeClass::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
+	CString tmp;
 	setFormMode(mode);
 	//find employee
 	switch (mode)
@@ -43,6 +44,66 @@ BOOL EditEmployeeClass::OnInitDialog()
 					ISWORKING_CHKBOX.EnableWindow(true);
 					ISWORKING_CHKBOX.SetCheck(true);
 				}
+				else {
+					tmp.Format(L"%d", teacher->getEndDay());
+					EDAY_CBOX.AddString(tmp);
+					EDAY_CBOX.SetCurSel(0);
+					tmp.Format(L"%d", teacher->getEndMonth());
+					EMONTH_CBOX.AddString(tmp);
+					EMONTH_CBOX.SetCurSel(0);
+					tmp.Format(L"%d", teacher->getEndYear());
+					EYEAR_CBOX.AddString(tmp);
+					EYEAR_CBOX.SetCurSel(0);
+				}
+					PNAME_TXTBOX.SetWindowText(teacher->getFName());
+					LNAME_TXTBOX.SetWindowText(teacher->getLName());
+					tmp.Format(L"%d", teacher->getID());
+					ID_TXTBOX.SetWindowText(tmp);
+					GENDER_CBOX.AddString(L"זכר");
+					GENDER_CBOX.SetCurSel(0);
+					tmp.Format(L"%d", teacher->getDayOfBirth());
+					BDAY_CBOX.AddString(tmp);
+					BDAY_CBOX.SetCurSel(0);
+					tmp.Format(L"%d", teacher->getMonthOfBirth());
+					BMONTH_CBOX.AddString(tmp);
+					BMONTH_CBOX.SetCurSel(0);
+					tmp.Format(L"%d", teacher->getYearOfBirth());
+					BYEAR_CBOX.AddString(tmp);
+					BYEAR_CBOX.SetCurSel(0);
+					STREET_TXTBOX.SetWindowText(teacher->getStreet());
+					CITY_TXTBOX.SetWindowText(teacher->getCity());
+					tmp.Format(L"%d", teacher->getZipCode());
+					ZIPCODE_TXTBOX.SetWindowText(tmp);
+					tmp.Format(L"%d", teacher->getPhoneNumber());
+					PHONE_TXTBOX.SetWindowText(tmp);
+					tmp.Format(L"%d", teacher->getStartDay());
+					SDAY_CBOX.AddString(tmp);
+					SDAY_CBOX.SetCurSel(0);
+					tmp.Format(L"%d", teacher->getStartMonth());
+					SMONTH_CBOX.AddString(tmp);
+					SMONTH_CBOX.SetCurSel(0);
+					tmp.Format(L"%d", teacher->getStartYear());
+					SYEAR_CBOX.AddString(tmp);
+					SYEAR_CBOX.SetCurSel(0);
+					tmp.Format(L"%lf", teacher->getSallery());
+					SALLERY_TXTBOX.SetWindowText(tmp);
+					tmp.Format(L"%d", teacher->getKids());
+					KIDS_TXTBOX.SetWindowText(tmp);
+					MARRIGE_CHKBOX.SetCheck(teacher->getMarrigeStatus());
+					label = GetDlgItem(TCHR_PDAGOGI_TEXT);
+					label->ShowWindow(SW_SHOW);
+					label = GetDlgItem(EMP_PROFFESSION_TXT);
+					label->ShowWindow(SW_SHOW);
+					PROFFESSION_TXTBOX.ShowWindow(SW_SHOW);
+					PROFFESSION_TXTBOX.SetWindowText(teacher->getProffesion());
+					label = GetDlgItem(EMP_ASSOCIATION_TXT);
+					label->ShowWindow(SW_SHOW);
+					ASSOCIATION_CBOX.ShowWindow(SW_SHOW);
+					label = GetDlgItem(EMP_EDUCATION_TXT);
+					label->ShowWindow(SW_SHOW);
+					EDUCATION_CBOX.ShowWindow(SW_SHOW);
+					EDUCATOR_CHKBOX.ShowWindow(SW_SHOW);
+
 				break;
 			}
 		}
@@ -75,7 +136,7 @@ void EditEmployeeClass::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, EMP_EMONTH_CBOX, EMONTH_CBOX);
 	DDX_Control(pDX, EMP_EYEAR_CBOX, EYEAR_CBOX);
 	DDX_Control(pDX, EMP_PNAME_TXTBOX, PNAME_TXTBOX);
-	DDX_Control(pDX, EMP_LNAME_TXTBOX, ENAME_TXTBOX);
+	DDX_Control(pDX, EMP_LNAME_TXTBOX, LNAME_TXTBOX);
 	DDX_Control(pDX, EMP_ID_TXTBOX, ID_TXTBOX);
 	DDX_Control(pDX, EMP_GENDER_CBOX, GENDER_CBOX);
 	DDX_Control(pDX, EMP_BDAY_CBOX, BDAY_CBOX);
@@ -92,7 +153,7 @@ void EditEmployeeClass::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, EMP_KIDS_TXTBOX, KIDS_TXTBOX);
 	DDX_Control(pDX, EMP_ROLE_TXTBOX, ROLE_TXTBOX);
 	DDX_Control(pDX, EMP_MARRIGE_CHKBOX, MARRIGE_CHKBOX);
-	DDX_Control(pDX, EMP_PROFFESSION_TXTBOX, PROGFFESSION_TXTBOX);
+	DDX_Control(pDX, EMP_PROFFESSION_TXTBOX, PROFFESSION_TXTBOX);
 	DDX_Control(pDX, EMP_ASSOCIATION_CBOX, ASSOCIATION_CBOX);
 	DDX_Control(pDX, EMP_EDUCATION_CBOX, EDUCATION_CBOX);
 	DDX_Control(pDX, EMP_EDUCATOR_CHKBOX, EDUCATOR_CHKBOX);
