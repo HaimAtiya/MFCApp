@@ -101,8 +101,29 @@ BOOL EditEmployeeClass::OnInitDialog()
 					ASSOCIATION_CBOX.ShowWindow(SW_SHOW);
 					label = GetDlgItem(EMP_EDUCATION_TXT);
 					label->ShowWindow(SW_SHOW);
+					ASSOCIATION_CBOX.AddString(L"הסתדרות המורים");
+					ASSOCIATION_CBOX.AddString(L"ארגון המורים");
+					int association_num = 1;
+					if (teacher->getAssociation() == L"הסתדרות המורים")
+						association_num = 0;
+					ASSOCIATION_CBOX.SetCurSel(association_num);
 					EDUCATION_CBOX.ShowWindow(SW_SHOW);
+					EDUCATION_CBOX.AddString(L"תואר ראשון");
+					EDUCATION_CBOX.AddString(L"תואר שני");
+					EDUCATION_CBOX.AddString(L"דוקטורט");
+					EDUCATION_CBOX.AddString(L"פרופסורה");
+					int education_num;
+					if (teacher->getEducation() == L"תואר ראשון")
+						education_num = 0;
+					else if (teacher->getEducation() == L"תואר שני")
+						education_num = 1;
+					else if (teacher->getEducation() == L"דוקטורט")
+						education_num = 2;
+					else if (teacher->getEducation() == L"פרופסורה")
+						education_num = 3;
+					EDUCATION_CBOX.SetCurSel(education_num);
 					EDUCATOR_CHKBOX.ShowWindow(SW_SHOW);
+					EDUCATOR_CHKBOX.SetCheck(teacher->getEducatorStatus());
 
 				break;
 			}
@@ -222,4 +243,9 @@ void EditEmployeeClass::OnBnClickedIsworkingChkbox()
 		}
 		EYEAR_CBOX.SetCurSel(0);
 	}
+}
+
+template<class T>
+void initValues(T employee) {
+	
 }

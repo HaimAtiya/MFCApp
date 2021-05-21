@@ -48,7 +48,7 @@ CString Teacher::getProffesion() {
 	return this->proffesion;
 }
 CString Teacher::getEducation() {
-	return this->proffesion;
+	return this->education;
 }
 bool Teacher::getEducatorStatus() {
 	return this->isEducator;

@@ -21,6 +21,8 @@ public:
 	void setFormTitle(CString title);
 	Teacher *teacher;
 	Worker *worker;
+	template<class T>
+	void initValues(T employee);
 // Dialog Data
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = EDIT_EMPLOYEE };
