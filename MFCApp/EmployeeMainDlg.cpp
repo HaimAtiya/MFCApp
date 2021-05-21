@@ -74,7 +74,7 @@ void EmployeeMainDlg::OnBnClickedTchrBtn()
 		Teachers.Serialize(ar);
 		ar.Close();
 		file.Close();
-		MessageBox(L"ψωιξϊ δξεψιν πθςπδ αδφμηδ!");
+		MessageBox(L"Χ¨Χ©Χ™ΧΧª Χ”ΧΧ•Χ¨Χ™Χ Χ ΧΧΆΧ Χ” Χ‘Χ”Χ¦ΧΧ—Χ”!");
 
 		//Update list
 		listDlg.updateList();
@@ -94,7 +94,7 @@ void EmployeeMainDlg::OnExportTchrBnClicked()
 		Teachers.Serialize(ar);
 		ar.Close();
 		file.Close();
-		MessageBox(L"ψωιξϊ δξεψιν πωξψδ αδφμηδ!");
+		MessageBox(L"Χ¨Χ©Χ™ΧΧª Χ”ΧΧ•Χ¨Χ™Χ Χ Χ©ΧΧ¨Χ” Χ‘Χ”Χ¦ΧΧ—Χ”!");
 	}
 }
 
@@ -111,7 +111,7 @@ void EmployeeMainDlg::OnImportWrkrBnClicked()
 		Workers.Serialize(ar);
 		ar.Close();
 		file.Close();
-		MessageBox(L"ψωιξϊ δςεαγιν πθςπδ αδφμηδ!");
+		MessageBox(L"Χ¨Χ©Χ™ΧΧª Χ”ΧΆΧ•Χ‘Χ“Χ™Χ Χ ΧΧΆΧ Χ” Χ‘Χ”Χ¦ΧΧ—Χ”!");
 
 		//Update list
 		listDlg.updateList();
@@ -131,7 +131,7 @@ void EmployeeMainDlg::OnWrkrExportBnClicked()
 		Workers.Serialize(ar);
 		ar.Close();
 		file.Close();
-		MessageBox(L"ψωιξϊ δςεαγιν πωξψδ αδφμηδ!");
+		MessageBox(L"Χ¨Χ©Χ™ΧΧª Χ”ΧΆΧ•Χ‘Χ“Χ™Χ Χ Χ©ΧΧ¨Χ” Χ‘Χ”Χ¦ΧΧ—Χ”!");
 	}
 }
 
@@ -174,10 +174,10 @@ void EmployeeMainDlg::OnBnClickedEmployeeBtn()
 			{
 				t = Teachers.GetAt(i);
 				CString confirm_txt;
-				confirm_txt.Format(L"δΰν ΰϊδ αθεη ωαψφεπκ μξηεχ ΰϊ δξεψδ %s?", t->getFullName());
-				const int result = MessageBox(confirm_txt, L"ξηιχϊ ξεψδ", MB_YESNO);
+				confirm_txt.Format(L"Χ”ΧΧ ΧΧªΧ” Χ‘ΧΧ•Χ— Χ©Χ‘Χ¨Χ¦Χ•Χ Χ ΧΧΧ—Χ•Χ§ ΧΧª Χ”ΧΧ•Χ¨Χ” %s?", t->getFullName());
+				const int result = MessageBox(confirm_txt, L"ΧΧ—Χ™Χ§Χª ΧΧ•Χ¨Χ”", MB_YESNO);
 				if (result == IDYES) {
-					MessageBox(L"δξεψδ πξηχ αδφμηδ!");
+					MessageBox(L"Χ”ΧΧ•Χ¨Χ” Χ ΧΧ—Χ§ Χ‘Χ”Χ¦ΧΧ—Χ”!");
 					Teachers.RemoveAt(i);
 					//Update list
 					listDlg.updateList();
@@ -194,10 +194,10 @@ void EmployeeMainDlg::OnBnClickedEmployeeBtn()
 			{
 				w = Workers.GetAt(i);
 				CString confirm_txt;
-				confirm_txt.Format(L"δΰν ΰϊδ αθεη ωαψφεπκ μξηεχ ΰϊ δςεαγ %s?", w->getFullName());
-				const int result = MessageBox(confirm_txt, L"ξηιχϊ ςεαγ", MB_YESNO);
+				confirm_txt.Format(L"Χ”ΧΧ ΧΧªΧ” Χ‘ΧΧ•Χ— Χ©Χ‘Χ¨Χ¦Χ•Χ Χ ΧΧΧ—Χ•Χ§ ΧΧª Χ”ΧΆΧ•Χ‘Χ“ %s?", w->getFullName());
+				const int result = MessageBox(confirm_txt, L"ΧΧ—Χ™Χ§Χª ΧΆΧ•Χ‘Χ“", MB_YESNO);
 				if (result == IDYES) {
-					MessageBox(L"δςεαγ πξηχ αδφμηδ!");
+					MessageBox(L"Χ”ΧΆΧ•Χ‘Χ“ Χ ΧΧ—Χ§ Χ‘Χ”Χ¦ΧΧ—Χ”!");
 					Workers.RemoveAt(i);
 					//Update list
 					listDlg.updateList();
