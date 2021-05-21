@@ -305,12 +305,25 @@ void EditEmployeeClass::OnBnClickedEmpBtn()
 	switch (mode)
 	{
 	case 'T': {
+		CString proffession, association, education;
 		saveEmployee(teacher, Teachers);
+		//save the rest of the fields:
+		PROFFESSION_TXTBOX.GetWindowText(proffession);
+		ASSOCIATION_CBOX.GetWindowText(association);
+		EDUCATION_CBOX.GetWindowText(education);
+		teacher->setProffesion(proffession);
+		teacher->setAssociation(association);
+		teacher->setEducation(education);
+		teacher->setEducatorStatus(EDUCATOR_CHKBOX.GetCheck());
+
 	}
 	break;
 	case 'W': {
+		CString role;
 		saveEmployee(worker, Workers);
-
+		//save the rest of the fields:
+		ROLE_TXTBOX.GetWindowText(role);
+		worker->setRole(role);
 	}
 	break;
 	default:

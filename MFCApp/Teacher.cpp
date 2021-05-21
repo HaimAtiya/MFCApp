@@ -42,7 +42,7 @@ void Teacher::setEducatorStatus(bool isEducator) {
 	this->isEducator = isEducator;
 }
 void Teacher::setAssociation(CString Association) {
-	this->association = association;
+	this->association = Association;
 }
 CString Teacher::getProffesion() {
 	return this->proffesion;
