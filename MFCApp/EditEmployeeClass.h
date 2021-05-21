@@ -1,6 +1,7 @@
 #pragma once
 #include "Teacher.h"
 #include "Worker.h"
+#include "enums.h"
 
 // EditEmployeeClass dialog
 
@@ -22,7 +23,9 @@ public:
 	Teacher *teacher;
 	Worker *worker;
 	template<class T>
-	void initValues(T employee);
+	void initValues(T* employee, CTypedPtrArray< CObArray, T*>* Employees);
+	template<class T>
+	void saveEmployee(T* employee, CTypedPtrArray< CObArray, T*>* Employees);
 // Dialog Data
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = EDIT_EMPLOYEE };
@@ -62,4 +65,5 @@ public:
 	CComboBox ASSOCIATION_CBOX;
 	CComboBox EDUCATION_CBOX;
 	CButton EDUCATOR_CHKBOX;
+	afx_msg void OnBnClickedEmpBtn();
 };

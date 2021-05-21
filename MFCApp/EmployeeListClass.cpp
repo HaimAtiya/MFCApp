@@ -124,6 +124,7 @@ void EmployeeListClass::OnNMDblclkListCtrl(NMHDR* pNMHDR, LRESULT* pResult)
 		dlg.Workers = Workers;
 		dlg.eList = &eList;
 		dlg.DoModal();
+		updateList();
 	}
 	*pResult = 0;
 }
