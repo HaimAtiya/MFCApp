@@ -41,9 +41,9 @@ void Employee::setWorkingStatus(bool status) {
 	this->isWorking = status;
 }
 void Employee::setDateOfEnding(int day, int month, int year) {
-	this->dayOfStart = day;
-	this->monthOfStart = month;
-	this->yearOfStart = year;
+	this->dayOfEnd = day;
+	this->monthOfEnd = month;
+	this->yearOfEnd = year;
 }
 double Employee::getSallery() {
 	return this->sallery;
