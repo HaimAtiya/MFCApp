@@ -15,10 +15,12 @@
 #define IDB_BITMAP3                     142
 #define EMPLOYEE_MAIN                   143
 #define EMPLOYEE_LIST                   147
+#define EDIT_EMPLOYEE                   148
 #define IDC_                            1001
 #define IDC_STATIC1                     1001
 #define MISSING_COUNT                   1001
 #define ADD_EMPLOYEE_HEADER             1001
+#define EDIT_EMPLOYEE_HEADER            1001
 #define IDC_BUTTON1                     1003
 #define IDC_BUTTON2                     1004
 #define IDC_BUTTON5                     1007
@@ -104,16 +106,21 @@
 #define EMP_EDUCATION_TXT               1096
 #define EMP_ASSOCIATION_TXT             1097
 #define ADD_EMPLOYEE_BTN                1098
+#define EMP_EDAY_CBOX                   1098
 #define EMP_PHONE_TXTBOX                1099
+#define EMP_EMONTH_CBOX                 1100
+#define EMP_EYEAR_CBOX                  1101
+#define SAVE_EMP_BTN                    1102
+#define WINVER                          0x0500
 #define ADD_STUDENT                     57665
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        148
+#define _APS_NEXT_RESOURCE_VALUE        150
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1099
+#define _APS_NEXT_CONTROL_VALUE         1103
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

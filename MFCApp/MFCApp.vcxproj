@@ -186,6 +186,7 @@
     <ClInclude Include="AddEmployeeClass.h" />
     <ClInclude Include="AddStudentClass.h" />
     <ClInclude Include="AllStudentsClass.h" />
+    <ClInclude Include="EditEmployeeClass.h" />
     <ClInclude Include="editStudentClass.h" />
     <ClInclude Include="Employee.h" />
     <ClInclude Include="EmployeeListClass.h" />
@@ -207,6 +208,7 @@
     <ClCompile Include="AddEmployeeClass.cpp" />
     <ClCompile Include="AddStudentClass.cpp" />
     <ClCompile Include="AllStudentsClass.cpp" />
+    <ClCompile Include="EditEmployeeClass.cpp" />
     <ClCompile Include="editStudentClass.cpp" />
     <ClCompile Include="Employee.cpp" />
     <ClCompile Include="EmployeeListClass.cpp" />
