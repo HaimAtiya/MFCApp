@@ -31,4 +31,5 @@ protected:
 public:
 	CListCtrl eList;
 	afx_msg void OnLvnItemchangedListCtrl(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnNMDblclkListCtrl(NMHDR* pNMHDR, LRESULT* pResult);
 };

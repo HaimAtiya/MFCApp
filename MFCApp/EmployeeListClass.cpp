@@ -5,7 +5,7 @@
 #include "MFCApp.h"
 #include "EmployeeListClass.h"
 #include "afxdialogex.h"
-
+#include "EditEmployeeClass.h"
 
 // EmployeeListClass dialog
 
@@ -44,6 +44,7 @@ void EmployeeListClass::DoDataExchange(CDataExchange* pDX)
 
 BEGIN_MESSAGE_MAP(EmployeeListClass, CDialogEx)
 	ON_NOTIFY(LVN_ITEMCHANGED, EMPLOYEE_LIST_CTRL, &EmployeeListClass::OnLvnItemchangedListCtrl)
+	ON_NOTIFY(NM_DBLCLK, EMPLOYEE_LIST_CTRL, &EmployeeListClass::OnNMDblclkListCtrl)
 END_MESSAGE_MAP()
 
 
@@ -72,7 +73,7 @@ void EmployeeListClass::updateList() {
 		eList.SetItemText(nItem, 1, w->getFName());
 		eList.SetItemText(nItem, 2, w->getLName());
 		eList.SetItemText(nItem, 3, w->getBirthDay());
-		eList.SetItemText(nItem, 4, L"איש צוות");
+		eList.SetItemText(nItem, 4, L"עובד");
 		tmp.Format(_T("%s"), w->getWorkingStatus() ? L"כן" : L"לא");
 		eList.SetItemText(nItem, 5, tmp);
 		eList.SetItemText(nItem, 6, w->getAddress());
@@ -101,6 +102,28 @@ void EmployeeListClass::OnLvnItemchangedListCtrl(NMHDR* pNMHDR, LRESULT* pResult
 			*curr_id = NULL;
 			DELETE_BUTTON->EnableWindow(false);
 		}
+	}
+	*pResult = 0;
+}
+
+//WHEN DOUBLE CLICKING ROW
+void EmployeeListClass::OnNMDblclkListCtrl(NMHDR* pNMHDR, LRESULT* pResult)
+{
+	CPoint pt;
+	GetCursorPos(&pt);
+	eList.ScreenToClient(&pt);
+	UINT Flags;
+	int hItem = eList.HitTest(pt, &Flags);
+	if (Flags & LVHT_ONITEMLABEL)
+	{
+		EditEmployeeClass dlg;
+		dlg.id = _ttoi(eList.GetItemText(hItem, 0));
+		char mode = (eList.GetItemText(hItem, 4)) == L"מורה" ? 'T' : 'W';
+		dlg.mode = mode;
+		dlg.Teachers = Teachers;
+		dlg.Workers = Workers;
+		dlg.eList = &eList;
+		dlg.DoModal();
 	}
 	*pResult = 0;
 }

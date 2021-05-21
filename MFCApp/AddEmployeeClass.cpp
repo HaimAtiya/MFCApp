@@ -61,6 +61,8 @@ BOOL AddEmployeeClass::OnInitDialog()
 	ASSOCIATION_CBOX.AddString(L"הסתדרות המורים");
 	ASSOCIATION_CBOX.AddString(L"ארגון המורים");
 	ASSOCIATION_CBOX.SetCurSel(0);
+	ISWORKING_CHKBOX.SetCheck(1);
+
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
@@ -227,7 +229,7 @@ void AddEmployeeClass::resetControls() {
 	SALLERY_TXTBOX.SetWindowText(L"");
 	MARRIGE_CHKBOX.SetCheck(0);
 	KIDS_TXTBOX.SetWindowText(L"");
-	ISWORKING_CHKBOX.SetCheck(0);
+	ISWORKING_CHKBOX.SetCheck(1);
 	SDAY_CBOX.SetCurSel(0);
 	SMONTH_CBOX.SetCurSel(0);
 	SYEAR_CBOX.SetCurSel(0);
