@@ -13,6 +13,8 @@ public:
 	bool *complete;
 	Person *pers;
 	void resetControls();
+	bool isAddDlgInAction;
+	bool forceClose;
 // Dialog Data
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = ADD_STUDENT };

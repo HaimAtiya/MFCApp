@@ -176,6 +176,10 @@ void editStudentClass::OnBnClickedButton3()
 //REMOVE ONE LATE
 void editStudentClass::OnBnClickedButton4()
 {
+	if (!(student->getLate())) {
+		MessageBox(L"מספר האיחורים אינו יכול להיות שלילי.");
+			return ;
+	}
 	label = GetDlgItem(LATES_COUNT);
 	tmp.Format(L"%d", student->removeLate());
 	label->SetWindowText(tmp);
@@ -192,6 +196,10 @@ void editStudentClass::OnBnClickedButton8()
 //REMOVE ONE MISS
 void editStudentClass::OnBnClickedButton9()
 {
+	if (!(student->getMissing())) {
+		MessageBox(L"מספר החיסורים אינו יכול להיות שלילי.");
+		return;
+	}
 	label = GetDlgItem(MISSING_COUNT);
 	tmp.Format(L"%d", student->removeMissingDay());
 	label->SetWindowText(tmp);

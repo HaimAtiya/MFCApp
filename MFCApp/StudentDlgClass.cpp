@@ -29,6 +29,7 @@ BOOL StudentDlgClass::OnInitDialog()
 	allStudentDlg.DELETE_BTN = &DELETE_BTN;
 	allStudentDlg.Create(ALL_STUDENTS, this);
 	addStudentDlg.Create(ADD_STUDENT, this);
+	addStudentDlg.isAddDlgInAction = false;
 	allStudentDlg.ShowWindow(SW_SHOW);
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
@@ -65,8 +66,12 @@ void StudentDlgClass::OnBnClickedListBtn()
 void StudentDlgClass::OnBnClickedButton2()
 {
 	Person student, mother, father;
-	HANDLE t1;
-	DWORD t1ID;
+	if (addStudentDlg.isAddDlgInAction) {
+		allStudentDlg.ShowWindow(SW_HIDE);
+		addStudentDlg.ShowWindow(SW_SHOW);
+		return;
+	}
+	addStudentDlg.isAddDlgInAction = true;
 	allStudentDlg.ShowWindow(SW_HIDE);
 	addStudentDlg.setFormTitle(L"פרטי התלמיד");
 	addStudentDlg.pers = &student;
