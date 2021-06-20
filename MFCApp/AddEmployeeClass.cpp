@@ -156,7 +156,7 @@ void AddEmployeeClass::OnBnClickedEmployeeBtn()
 	CString tmp, fName, lName, street, city, role, proffession, education, association;
 	Sex gender;
 	PNAME_TXTBOX.GetWindowText(fName);
-	PNAME_TXTBOX.GetWindowText(lName);
+	LNAME_TXTBOX.GetWindowText(lName);
 	STREET_TXTBOX.GetWindowText(street);
 	CITY_TXTBOX.GetWindowText(city);
 	ID_TXTBOX.GetWindowText(tmp);
