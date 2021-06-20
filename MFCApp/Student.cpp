@@ -53,8 +53,8 @@ int Student::addLate() {
 	return ++lates;
 }
 int Student::removeMissingDay() {
-	return --missingDays;
+	return !missingDays ? 0: --missingDays;
 }
 int Student::removeLate() {
-	return --lates;
+	return !lates ? 0 : --lates;
 }

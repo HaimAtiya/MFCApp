@@ -24,9 +24,8 @@ AddStudentClass::~AddStudentClass()
 BOOL AddStudentClass::OnInitDialog()
 {
 	CString num;
+	forceClose = false;
 	CDialogEx::OnInitDialog();
-
-
 	gender_control.AddString(L"זכר");
 	gender_control.AddString(L"נקבה");
 	gender_control.SetCurSel(0);
@@ -102,28 +101,31 @@ void AddStudentClass::OnEnChangeName7()
 
 void AddStudentClass::OnBnClickedButton1()
 {
-	int id, dayOfBirth, monthOfBirth, yearOfBirth, phone, zipCode;
-	CString tmp, fName, lName, street, city;
-	Sex gender;
-	PNAME_TXTBOX.GetWindowText(fName);
-	LNAME_TXTBOX.GetWindowText(lName);
-	STREET_TXTBOX.GetWindowText(street);
-	CITY_TXTBOX.GetWindowText(city);
-	ID_TXTBOX.GetWindowText(tmp);
-	id = _ttoi(tmp);
-	DAY_TXTBOX.GetWindowText(tmp);
-	dayOfBirth = _ttoi(tmp);
-	MONTH_TXTBOX.GetWindowText(tmp);
-	monthOfBirth = _ttoi(tmp);
-	YEAR_TXTBOX.GetWindowText(tmp);
-	yearOfBirth = _ttoi(tmp);
-	PHONE_TXTBOX.GetWindowText(tmp);
-	phone = _ttoi(tmp);
-	ZIPCODE_TXTBOX.GetWindowText(tmp);
-	zipCode = _ttoi(tmp);
-	gender_control.GetWindowText(tmp);
-	gender = (tmp == "זכר") ? Male : Female;
-	*pers = *(new Person(id, fName, lName, gender, dayOfBirth, monthOfBirth, yearOfBirth, street, city, zipCode, phone));
+	if (!forceClose) {
+		int id, dayOfBirth, monthOfBirth, yearOfBirth, phone, zipCode;
+		CString tmp, fName, lName, street, city;
+		Sex gender;
+		PNAME_TXTBOX.GetWindowText(fName);
+		LNAME_TXTBOX.GetWindowText(lName);
+		STREET_TXTBOX.GetWindowText(street);
+		CITY_TXTBOX.GetWindowText(city);
+		ID_TXTBOX.GetWindowText(tmp);
+		id = _ttoi(tmp);
+		DAY_TXTBOX.GetWindowText(tmp);
+		dayOfBirth = _ttoi(tmp);
+		MONTH_TXTBOX.GetWindowText(tmp);
+		monthOfBirth = _ttoi(tmp);
+		YEAR_TXTBOX.GetWindowText(tmp);
+		yearOfBirth = _ttoi(tmp);
+		PHONE_TXTBOX.GetWindowText(tmp);
+		phone = _ttoi(tmp);
+		ZIPCODE_TXTBOX.GetWindowText(tmp);
+		zipCode = _ttoi(tmp);
+		gender_control.GetWindowText(tmp);
+		gender = (tmp == "זכר") ? Male : Female;
+		*pers = *(new Person(id, fName, lName, gender, dayOfBirth, monthOfBirth, yearOfBirth, street, city, zipCode, phone));
+	}
+	isAddDlgInAction = false;
 	EndDialog(0);
 	resetControls();
 }
