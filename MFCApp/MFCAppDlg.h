@@ -4,6 +4,8 @@
 
 #pragma once
 #include "Student.h"
+#include "Teacher.h"
+#include "Worker.h"
 
 // CMFCAppDlg dialog
 class CMFCAppDlg : public CDialogEx
@@ -12,7 +14,7 @@ class CMFCAppDlg : public CDialogEx
 public:
 	CMFCAppDlg(CWnd* pParent = nullptr);	// standard constructor
 	CTypedPtrArray< CObArray, Student*> students;
-// Dialog Data
+	// Dialog Data
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_MFCAPP_DIALOG };
 #endif
