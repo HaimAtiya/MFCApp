@@ -7,7 +7,7 @@ It is possible to add, change and delete objects.
 The app also allows you to save and restore objects.
 
 
-Created By Haim Atiya & Dayana Pargment
+Created By Haim Atiya
 
 Spring Semester 2021
 
